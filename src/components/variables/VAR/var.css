@@ -1,0 +1,10 @@
+:root {
+    --var-html-width: 100%;
+    --var-html-height: 100%;
+    --var-html-background-color: #000000;
+
+    --var-primary-color: #3498db;
+    --var-secondary-color: #2ecc71;
+    --var-font-size: 16px;
+    --var-padding: 10px;
+}
