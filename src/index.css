@@ -8,10 +8,17 @@ html {
   height: var(--var-html-height);
   width: var(--var-html-width);
   background-color: var(--var-html-background-color);
+  color: white;
+}
+
+body {
+  height: var(--var-html-height);
+  width: var(--var-html-width);
 }
 
 
-#root, body {
+#root {
   height: var(--var-html-height);
-  width: var(--var-html-width);
+  width: var(--var-root-width);
+  margin: 0 auto;
 }

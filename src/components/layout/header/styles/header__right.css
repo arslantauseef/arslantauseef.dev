@@ -1,0 +1,18 @@
+.ar-nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.ar-nav > ul {
+    list-style-type: none;
+    display: flex;
+    gap: 10px; 
+    white-space: nowrap;
+    background-color: rgb(85, 180, 220);
+    align-items: center;
+    background-color: rgb(197, 161, 161);
+    height: 10px;
+    width: 100%;
+}
