@@ -6,15 +6,37 @@
     padding: 0 20px;
 }
 
-.ar-nav > ul {
+.ar-nav>ul {
     list-style-type: none;
     display: flex;
-    gap: 10px; 
+    gap: 10px;
     white-space: nowrap;
-    background-color: rgb(85, 180, 220);
     align-items: center;
-    background-color: rgb(197, 161, 161);
     height: 100%;
     width: 100%;
-    border: 1px solid white;
+
+}
+
+.ar-nav>ul>li {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+    border-radius: 50px;
+    border: 2px solid white;
+}
+
+.ar-nav>ul>li>button {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    overflow: hidden;
+    background-color: transparent;
+    color: white;
 }
