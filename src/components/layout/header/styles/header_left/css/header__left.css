@@ -1,0 +1,17 @@
+.ar-header-left {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.SVGShards {
+    width: 50%;
+    height: 100%;
+}
+.ArslanTauseef {
+    width: 50%;
+    height: 100%;
+}
