@@ -2,15 +2,15 @@
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
     align-items: center;
+    gap: 30px;
 }
 
 .ar-header-right ul li,
 .ar-header-right a {
     list-style: none;
     text-decoration: none;
-    color: white;
 }
 
 .ar-nav-list,
@@ -25,10 +25,6 @@
 }
 
 .ar-nav-list>li {
-    border: 2px solid #458ABE;
-    width: 80px;
-    height: 30px;
-    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -36,15 +32,54 @@
 }
 
 .ar-cta>a {
-    border: 2px solid #458ABE;
-    background: #5CE3EA;
-    background: linear-gradient(248deg, rgb(126, 241, 247) 0%, rgba(69, 138, 190, 1) 69%, rgb(80, 106, 184) 100%);
+
     width: 120px;
-    height: 100px;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    border: 1.5px solid rgb(26, 26, 26);
+    border-radius: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 15px;
-    color: black;
+    color: white;
+    position: relative;
+    transition: all 0.3 ease;
+    overflow: hidden;
+
+}
+
+#ar-cta-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50px;
+    width: 100%;
+    height: 100%;
+    padding: 1.5px;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) border-box;
+    mask-composite: exclude;
+
+}
+
+#ar-cta-glow {
+    content: "";
+    background: conic-gradient(from 0deg, transparent 0%, #fff 50%, transparent 20%);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 0 0;
+    animation: conic-rotation 5s infinite linear;
+}
+
+@keyframes conic-rotation {
+    0%{
+        transform: rotate(0deg) translate(-50%, -50%);
+    }
+    100% {
+        transform: rotate(360deg) translate(-50%, -50%);
+    }
+    
 }
