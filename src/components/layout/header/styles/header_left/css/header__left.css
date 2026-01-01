@@ -1,17 +1,20 @@
 .ar-header-left {
-    width: 30%;
+    width: 10%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    position: relative;
 }
 
-.SVGShards {
-    width: 50%;
-    height: 100%;
+.SVGPolygon {
+    width: 100%;
+    height: 60%;
 }
-.ArslanTauseef {
-    width: 50%;
-    height: 100%;
+
+.circles {
+    position: absolute;
+    border: 2px solid #ACE5FF;
+    border-radius: 100%;
 }

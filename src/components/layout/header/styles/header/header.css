@@ -1,5 +1,4 @@
 .ar-header {
-    margin-top: 35px;
     display: flex;
     height: var(--var-header-height);
     width: var(--var-header-width);
