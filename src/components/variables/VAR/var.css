@@ -5,9 +5,12 @@
     --var-html-background-color: #000000;
 
     /* HEADER Variables */
-    --var-header-height: 130px;
+    --var-header-height: 22vh;
     --var-header-width: 100%;
 
     /* ROOT WIDTH */
     --var-root-width: 95%;
+
+    /* Middle Variables */
+    --var-middle-height: 78vh;
 }

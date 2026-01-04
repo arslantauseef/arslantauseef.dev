@@ -15,6 +15,7 @@
 
 .circles {
     position: absolute;
+    z-index: 1;
     border: 2px solid #ffffff;
     border-radius: 100%;
 }

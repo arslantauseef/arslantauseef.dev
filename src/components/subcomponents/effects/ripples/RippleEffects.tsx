@@ -7,10 +7,12 @@ export const handleRippleOnClick = (
 ) => {
   const target = e.currentTarget;
   const rect = target.getBoundingClientRect();
-  const size = Math.max(rect.width, rect.height) * 1.5;
+  const size = Math.max(rect.width, rect.height) * 2;
 
   setRipples(prev => ({
     ...prev,
     [key]: { x: e.clientX - rect.left, y: e.clientY - rect.top, size }
   }));
+
+  
 };

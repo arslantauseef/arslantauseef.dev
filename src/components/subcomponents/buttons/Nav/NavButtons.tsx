@@ -9,7 +9,6 @@ interface NavButtonProps {
   onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   children?: React.ReactNode;
   href?: "/" | "/Projects" | "/About" | "/Contact";
-  onMouseMove?: (pos: {x: number, y:number}) => void;
 }
 
 export const NavButtons = ({
@@ -18,7 +17,6 @@ export const NavButtons = ({
   onClick,
   children,
   href,
-  onMouseMove,
 }: NavButtonProps) => {
     
   return (

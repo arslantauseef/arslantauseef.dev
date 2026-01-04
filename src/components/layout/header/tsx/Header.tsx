@@ -10,15 +10,13 @@ import { useEffect, useState } from "react";
 import { handleRippleOnClick } from "../../../subcomponents/effects/ripples/RippleEffects";
 
 export const Header = () => {
-  const [, setMousePos] = useState({ x: 0, y: 0 });
   const [ripples, setRipples] = useState<{
     [key: number]: { x: number; y: number; size: number } | null;
   }>({});
 
-  useEffect(() => {
-    console.log("me");
-  }, []);
-
+  useEffect(()=>{
+    console.log(ripples)
+  },[ripples])
   return (
     <header className="ar-header">
       <div className="ar-header-left">
@@ -58,11 +56,9 @@ export const Header = () => {
             return (
               <li key={index}>
                 <NavButtons
-                  href={button.href}
+                  // href={button.href}
                   variant="primary"
                   size="medium"
-                  onMouseMove={(pos) => setMousePos(pos)}
-                  style={{ position: "relative", overflow: "hidden" }}
                   onClick={(e) => handleRippleOnClick(e, index, setRipples)}
                 >
                   {button.label}
