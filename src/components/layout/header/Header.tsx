@@ -1,13 +1,14 @@
-import "../styles/header/header.css";
-import "../styles/header_left/css/header__left.css";
-import "../styles/header_right/css/header__right.css";
-import Polygons from "../../../../assets/SVGcomponents/Primary/Polygons";
+import "../../../styles/layout/header/mid--header/mid--header.css"
+import "../../../styles/layout/header/left-header/left-header.css"
+import "../../../styles/layout/header/right--header/right--header.css"
+import "../../../styles/layout/header/left-header/left-header-animation.css"
+import Polygons from "../../../assets/SVGcomponents/Primary/Polygons";
 import { motion } from "motion/react";
-import { NavButtons } from "../../../subcomponents/buttons/Nav/NavButtons";
-import { circles } from "../../../subcomponents/constants/circles";
-import { ArrayNavButtons } from "../../../subcomponents/constants/ArrayNavButtons";
+import { NavButtons } from "../../subcomponents/buttons/Nav/NavButtons";
+import { circles } from "../../subcomponents/constants/circles";
+import { ArrayNavButtons } from "../../subcomponents/constants/ArrayNavButtons";
 import { useEffect, useState } from "react";
-import { handleRippleOnClick } from "../../../subcomponents/effects/ripples/RippleEffects";
+import { handleRippleOnClick } from "../../subcomponents/effects/ripples/RippleEffects";
 
 export const Header = () => {
   const [ripples, setRipples] = useState<{
@@ -15,7 +16,6 @@ export const Header = () => {
   }>({});
 
   useEffect(()=>{
-    console.log(ripples)
   },[ripples])
   return (
     <header className="ar-header">

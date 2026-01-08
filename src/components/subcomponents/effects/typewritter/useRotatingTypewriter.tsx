@@ -11,70 +11,79 @@ interface RotatingTypewriterOptions {
 export function useRotatingTypewriter({
   words,
   typingSpeed = 50,
-  deletingSpeed = 30,
+  deletingSpeed = 25,
   pause = 5000,
   loop = true,
 }: RotatingTypewriterOptions) {
-  const [text, setText] = useState("");
 
-  const wordIndex = useRef(0);
-  const phase = useRef<"typing" | "pausing" | "deleting">("typing");
+  const [text, setText] = useState<string>("")
+  const wordIndex = useRef<number>(0)
   const startTime = useRef<number | null>(null);
-  const raf = useRef<number | null>(null);
+  const phase = useRef<"typing" | "deleting" | "pausing">("typing")
+  const raf = useRef<number | null>(null)
 
   useEffect(() => {
+
+
     const animate = (time: number) => {
       if (!startTime.current) startTime.current = time;
-      const elapsed = time - startTime.current;
 
-      const word = words[wordIndex.current];
+      const elapsed = time - startTime.current
+
+      const word = words[wordIndex.current]
 
       if (phase.current === "typing") {
         const chars = Math.min(
-          Math.floor(elapsed / typingSpeed),
-          word.length
-        );
-
-        setText(word.slice(0, chars));
+          Math.floor(elapsed / typingSpeed), word.length
+        )
+        setText(word.slice(0, chars))
 
         if (chars === word.length) {
-          phase.current = "pausing";
-          startTime.current = time;
+          phase.current = "pausing"
+          startTime.current = time
+          raf.current = requestAnimationFrame(animate);
+          return;
         }
       }
 
       if (phase.current === "pausing") {
+
         if (elapsed > pause) {
-          phase.current = "deleting";
-          startTime.current = time;
+          phase.current = "deleting"
+          startTime.current = time
+          raf.current = requestAnimationFrame(animate);
+          return;
         }
       }
 
       if (phase.current === "deleting") {
-        const chars = Math.max(
-          word.length - Math.floor(elapsed / deletingSpeed),
+        const elapsedDeleting = time - startTime.current!;
+        const charsToDelete = Math.max(
+          word.length - Math.floor(elapsedDeleting / deletingSpeed),
           0
         );
+        setText(word.slice(0, charsToDelete));
 
-        setText(word.slice(0, chars));
 
-        if (chars === 0) {
-          phase.current = "typing";
+        if (charsToDelete == 0) {
+
+          if (!loop && wordIndex.current === words.length - 1) return;
+
+          phase.current = "typing"
           startTime.current = time;
+          wordIndex.current = (wordIndex.current + 1) % words.length
 
-          wordIndex.current =
-            (wordIndex.current + 1) % words.length;
-
-          if (!loop && wordIndex.current === 0) return;
         }
+
+
       }
+
+
 
       raf.current = requestAnimationFrame(animate);
     };
-
     raf.current = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(raf.current!);
   }, [words, typingSpeed, deletingSpeed, pause, loop]);
-
   return text;
 }

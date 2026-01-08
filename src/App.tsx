@@ -1,12 +1,12 @@
 import "./App.css";
-import { Header } from "./components/layout/header/tsx/Header";
-import { Middle } from "./components/layout/middle/tsx/Middle";
+import { Header } from "./components/layout/header/Header";
+import { Middle } from "./components/layout/middle/Middle";
 
 function App() {
   return (
     <>
       <Header />
-      <Middle/>
+      <Middle />
     </>
   );
 }
