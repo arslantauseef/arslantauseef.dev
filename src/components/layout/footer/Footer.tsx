@@ -21,6 +21,7 @@ export const Footer = () => {
                             <li><a href=""><FaSquareXTwitter /></a></li>
                             <li><a href=""><FaSquareGithub /></a></li>
                             <li><a href=""><FaLinkedin /></a></li>
+                            <li><a href=""><FaLinkedin /></a></li>
                         </ul>
                     </div>
                 </section>
