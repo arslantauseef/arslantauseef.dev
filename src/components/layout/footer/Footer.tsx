@@ -7,9 +7,9 @@ import { FaLinkedin } from "react-icons/fa";
 
 export const Footer = () => {
     return (
-        
+
         <footer className="ar-footer">
-                 <hr />
+            <hr />
             <div className="up-footer">
                 <section className="left-footer" >
                     <div id="left-footer-up">
@@ -27,7 +27,7 @@ export const Footer = () => {
                 </section>
                 <section className="middle-footer" >
                     <div>
-                        <h2>Test 1</h2>
+                        <h2>Explore</h2>
                         <ul>
                             <li>test</li>
                             <li>test</li>
@@ -54,8 +54,26 @@ export const Footer = () => {
             </div>
             <hr />
             <div className="down-footer">
-                
-                <p style={{fontSize:"0.8rem"}}>@ Copyrights reserved to <span>Arslan Tauseef</span></p>
+
+                <p
+                    style={{
+                        fontSize: "0.8rem",
+                        fontFamily: "'Inter', sans-serif",
+                        color: "#666",
+                        letterSpacing: "0.5px",
+                        lineHeight: 1.4,
+                    }}
+                >
+                    &copy; {new Date().getFullYear()} reserved to <span style={{
+                        fontSize: "0.8rem",
+                        fontFamily: "'Inter', sans-serif",
+                        color: "#666",
+                        letterSpacing: "0.5px",
+                        lineHeight: 1.4,
+                    }}>Arslan Tauseef</span>
+                </p>
+
+
             </div>
         </footer>
     )
