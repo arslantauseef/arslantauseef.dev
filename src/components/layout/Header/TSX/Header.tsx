@@ -1,14 +1,13 @@
-import "../../../styles/layout/header/mid--header/mid--header.css"
-import "../../../styles/layout/header/left-header/left-header.css"
-import "../../../styles/layout/header/right--header/right--header.css"
-import "../../../styles/layout/header/left-header/left-header-animation.css"
-import Polygons from "../../../assets/SVGcomponents/Primary/Polygons";
+import HM from "../../Header/Styles/Header/Header.module.css"
+import HLM from "../../Header/Styles/Left/Header.left.module.css"
+import HRM from "../../Header/Styles/Right/Header.right.module.css"
+import Emblem from "../Assets/SVGComponents/Emblem/Emblem";
 import { motion } from "motion/react";
-import { NavButtons } from "../../subcomponents/buttons/Nav/NavButtons";
-import { circles } from "../../subcomponents/constants/circles";
-import { ArrayNavButtons } from "../../subcomponents/constants/ArrayNavButtons";
+import { NavigationBarButtons } from "../Features/ReusableButtons/NavigationBarButtons/TSX/NavigationBarButtons";
+import { circles } from "../Constants/circles";
+import { ArrayNavButtons } from "../Constants/ArrayNavButtons";
 import { useEffect, useState } from "react";
-import { handleRippleOnClick } from "../../subcomponents/effects/ripples/RippleEffects";
+import { handleRippleOnClick } from "../Features/RippleEffects/RippleEffects";
 
 export const Header = () => {
   const [ripples, setRipples] = useState<{
@@ -18,12 +17,12 @@ export const Header = () => {
   useEffect(()=>{
   },[ripples])
   return (
-    <header className="ar-header">
-      <div className="ar-header-left">
+    <header className={HM["ar-header"]}>
+      <div className={HLM["ar-header-left"]}>
         {circles.map((circles, index) => {
           return (
             <motion.div
-              className={`circles circle-${index}`}
+              className={HLM[`circles`] + ` ` + HLM[`circle-${index}`]}
               key={index}
               style={{
                 opacity: circles.opacity,
@@ -45,16 +44,15 @@ export const Header = () => {
             ></motion.div>
           );
         })}
-        <Polygons />
+        <Emblem />
       </div>
       {/* SEPERATOR */}
-      <nav className="ar-header-right" aria-label="Main navigation">
-        <ul className="ar-nav-list">
+      <nav className={HRM["ar-header-right"]} aria-label="Main navigation">
+        <ul className={HRM["ar-nav-list"]}>
           {ArrayNavButtons.map((button, index) => {
             return (
               <li key={index}>
-                <NavButtons
-                  // href={button.href}
+                <NavigationBarButtons
                   variant="primary"
                   size="medium"
                   onClick={(e) => handleRippleOnClick(e, index, setRipples)}
@@ -74,15 +72,15 @@ export const Header = () => {
                   }
                 />
               )}
-                </NavButtons>
+                </NavigationBarButtons>
               </li>
             );
           })}
         </ul>
-        <div className="ar-cta">
+        <div className={HRM["ar-cta"]}>
           <a href="/contact">
-            <div id="ar-cta-mask">
-              <div id="ar-cta-glow"></div>
+            <div id={HRM["ar-cta-mask"]}>
+              <div id={HRM["ar-cta-glow"]}></div>
             </div>
             CONTACT
           </a>

@@ -1,8 +1,10 @@
 import { motion, type SVGMotionProps } from "motion/react";
+import HLM from "../../../Styles/Left/Header.left.module.css"
+import HLAM from "../../../Styles/Left/Header.left.animation.module.css"
 
-const Polygons = (props: SVGMotionProps<SVGSVGElement>) => (
+const Emblem = (props: SVGMotionProps<SVGSVGElement>) => (
   <motion.svg
-    className="SVGPolygon"
+    className={HLAM["SVGPolygon"] + ` ` + HLM["SVGPolygon"]}
     width={378}
     height={413}
     viewBox="0 0 378 413"
@@ -10,7 +12,7 @@ const Polygons = (props: SVGMotionProps<SVGSVGElement>) => (
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g id="Polygons">
+    <g id="Emblem">
       <motion.path
         animate={{
           rotate: [0, 15, -15, 0],
@@ -105,4 +107,4 @@ const Polygons = (props: SVGMotionProps<SVGSVGElement>) => (
     </defs>
   </motion.svg>
 );
-export default Polygons;
+export default Emblem;

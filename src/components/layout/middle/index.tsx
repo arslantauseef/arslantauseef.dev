@@ -1,5 +1,5 @@
 import "../../../styles/layout/middle/mid-middle/mid-middle.css"
-import Pictureforherosection from "../../../assets/Pictures/MyPicture/Picture-For-Hero-Section.png"
+import HeroSectionsPicture from "../Header/Assets/Pictures/HeroSectionsPicture/HeroSectionsPicture.png"
 import { useRotatingTypewriter } from "../../subcomponents/effects/typewritter/useRotatingTypewriter";
 
 export const Middle = () => {
@@ -22,7 +22,7 @@ export const Middle = () => {
       </section>
       <section className="right-main-section">
         <div>
-          <img src={Pictureforherosection} alt="Profile Picture (Arslan Tauseef)" />
+          <img src={HeroSectionsPicture} alt="Profile Picture (Arslan Tauseef)" />
         </div>
       </section>
     </main>

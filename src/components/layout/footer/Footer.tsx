@@ -25,32 +25,37 @@ export const Footer = () => {
                         </ul>
                     </div>
                 </section>
-                <section className="middle-footer" >
-                    <div>
-                        <h2>Explore</h2>
+                <section className="middle-footer">
+                    <div className="footer-column">
+                        <h2>Projects</h2>
                         <ul>
-                            <li>test</li>
-                            <li>test</li>
-                            <li>test</li>
+                            <li>TrendSphere</li>
+                            <li>Portfolio Website</li>
+                            <li>E-commerce Website</li>
+                            <li>Open Source Contributions</li>
                         </ul>
                     </div>
-                    <div>
-                        <h2>Test 2</h2>
+
+                    <div className="footer-column">
+                        <h2>Skills</h2>
                         <ul>
-                            <li>test</li>
-                            <li>test</li>
-                            <li>test</li>
+                            <li>React / TypeScript</li>
+                            <li>PostgreSQL / MongoDB</li>
+                            <li>Python / FastAPI</li>
+                            <li>REST API</li>
                         </ul>
                     </div>
-                    <div>
-                        <h2>Test 3</h2>
+
+                    <div className="footer-column">
+                        <h2>Sections</h2>
                         <ul>
-                            <li>test</li>
-                            <li>test</li>
-                            <li>test</li>
+                            <li>Home</li>
+                            <li>Projects</li>
+                            <li>About</li>
                         </ul>
                     </div>
                 </section>
+
             </div>
             <hr />
             <div className="down-footer">

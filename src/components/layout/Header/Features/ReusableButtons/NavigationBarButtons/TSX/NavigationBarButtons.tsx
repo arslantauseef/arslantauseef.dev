@@ -1,5 +1,5 @@
 import React from "react";
-import "./NavButtons.css";
+import "../Styles/NavigationBarButtons.css";
 
 
 interface NavButtonProps {
@@ -11,7 +11,7 @@ interface NavButtonProps {
   href?: "/" | "/Projects" | "/About" | "/Contact";
 }
 
-export const NavButtons = ({
+export const NavigationBarButtons = ({
   variant = "primary",
   size = "medium",
   onClick,
