@@ -8,7 +8,7 @@ interface RotatingTypewriterOptions {
   loop?: boolean;
 }
 
-export function useRotatingTypewriter({
+export function CustomTypeWriterEffect({
   words,
   typingSpeed = 50,
   deletingSpeed = 25,
