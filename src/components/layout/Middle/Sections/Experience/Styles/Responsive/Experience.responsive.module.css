@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+    .at-experience-container {
+        flex-direction: column;
+    }
+
+    .at-experience-animation-container {
+        width: 100%;
+        height: 80%;
+
+
+    }
+
+    .at-ex-text {
+        width: 100%;
+        height: 20%;
+    }
+}

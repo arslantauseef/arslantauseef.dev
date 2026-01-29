@@ -7,9 +7,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 export const Footer = () => {
     return (
-
         <footer className="ar-footer">
-            <hr />
             <div className="up-footer">
                 <section className="left-footer" >
                     <div id="left-footer-up">
