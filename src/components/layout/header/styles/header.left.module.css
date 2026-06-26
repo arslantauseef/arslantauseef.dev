@@ -1,0 +1,14 @@
+.logoLink {
+  width: 56px;
+  height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo {
+    width: 100%;
+    height: 100%;
+}
+
