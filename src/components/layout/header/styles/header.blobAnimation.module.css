@@ -1,64 +1,31 @@
-.container {
-  display: flex;
-  gap: 32px;
-  position: relative;
-  isolation: isolate;
-}
-
-.navLinks {
-  display: flex;
-  gap: 32px;
-  position: relative;
-  isolation: isolate;
-}
-
-.active {
-  color: white !important;
-}
-
-.primary,
-.secondary {
-  position: relative;
-  z-index: 2;
-  text-decoration: none;
-  transition: color 0.25s ease;
-}
-
-/* .active::after {
-  content: "";
+.navBlob {
   position: absolute;
-  display: flex;
-  background: #808080;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: none;
   background: linear-gradient(
     81deg,
     rgba(128, 128, 128, 1) 0%,
     rgba(5, 5, 5, 1) 50%,
     rgba(166, 166, 166, 1) 100%
   );
+
   background-size: 220% 220%;
   background-position: 70% 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70px;
-  height: 70px;
-  z-index: -1;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
+
   animation:
     navblob 6s ease-in-out infinite,
     navbackgroundPosition 4s ease-in-out infinite alternate;
-} */
-
-.primary {
-  font-weight: 500;
-  color: var(--color-text);
-  padding: 2px 5px;
 }
 
-.secondary {
-  color: var(--color-text);
-}
-
-/* @keyframes navblob {
+@keyframes navblob {
   0% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
@@ -74,12 +41,13 @@
   75% {
     border-radius: 79% 21% 57% 43% / 65% 69% 31% 35%;
   }
+
   100% {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   }
-} */
+}
 
-/* @keyframes navbackgroundPosition {
+@keyframes navbackgroundPosition {
   0% {
     background-position: 50% 0%;
   }
@@ -99,4 +67,4 @@
   100% {
     background-position: 50% 0%;
   }
-} */
+}
