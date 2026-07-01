@@ -54,6 +54,10 @@ export const NavButtons = (props: Props) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const location = useLocation();
 
+
+
+
+
   const [blob, setBlob] = useState({
     x: 0,
     y: 0,
@@ -64,7 +68,6 @@ export const NavButtons = (props: Props) => {
 
   useLayoutEffect(() => {
     const container = containerRef.current;
-
     if (!container) return;
     const activeLink = container.querySelector('[aria-current="page"]');
 
@@ -79,7 +82,7 @@ export const NavButtons = (props: Props) => {
 
     const containerRect = container.getBoundingClientRect();
     const linkRect = activeLink.getBoundingClientRect();
-    const extraX = 28;
+    const extraX = 20;
     const extraY = 24;
 
     const width = linkRect.width + extraX;
