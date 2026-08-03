@@ -1,0 +1,22 @@
+.right {
+  width: 70%;
+  height: var(--hero-height);
+  position: relative;
+  perspective: 1200px;
+  font-family: var(--poppins);
+  min-width: 0;
+
+  animation: rightEntry 700ms ease-in 0.1s forwards;
+  opacity: 0;
+}
+
+@keyframes rightEntry {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

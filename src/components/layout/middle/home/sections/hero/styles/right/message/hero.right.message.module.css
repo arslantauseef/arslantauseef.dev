@@ -1,0 +1,72 @@
+.message {
+  /* position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+
+  width: min(30%, 320px);
+  height: min(20%, 160px);
+
+  z-index: 3;
+
+  transform: rotateX(10deg) rotateY(-6deg) translateZ(100px);
+
+  background-color: white;
+  box-shadow: 0px 0px 10px -1px black;
+
+  color: #fff;
+  border-radius: 10px;
+  animation: messageFloatingEffect 5s ease-in-out infinite;
+
+  /* Glasmorphish Effect */
+  /* background: rgba(16, 16, 16, 0.86);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(44, 44, 44, 0.1);
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  border: 1px solid rgba(16, 16, 16, 0.26); */
+}
+
+
+
+.headingWrapper {
+  /* display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  height: 100%; */
+}
+
+.heading {
+  /* display: grid;
+  width: 100%;
+  align-items: center;
+  font-size: clamp(0.1rem, 1vw, 0.7rem);
+  grid-template-columns: 0.7rem 1fr;
+  grid-template-rows: 0.7rem 1rem;
+  gap: 5px; */
+}
+
+.displayMessage {
+    /* grid-area: 2/ 2; */
+}
+
+
+
+
+@keyframes messageFloatingEffect {
+  /* 0% {
+    transform: translate(30%, 120%) rotateX(10deg) rotateY(-6deg)
+      translateZ(100px);
+  }
+  50% {
+    transform: translate(30%, 120%) rotateX(4deg) rotateY(-15deg)
+      translateZ(100px);
+  }
+  100% {
+    transform: translate(30%, 120%) rotateX(10deg) rotateY(-6deg)
+      translateZ(100px);
+  } */
+}

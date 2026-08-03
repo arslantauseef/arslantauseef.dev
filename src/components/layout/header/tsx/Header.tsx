@@ -3,7 +3,7 @@ import styleHeader from "../styles/header.module.css";
 import styleMiddle from "../styles/header.mid.module.css";
 import styleLeft from "../styles/header.left.module.css"
 import Logo from "../SVG/logo/Logo";
-import { NavButtons, navItems } from "../features/nav_buttons/tsx/NavButtons";
+import { NavigationMenuButtons, navItems } from "../features/NavigationMenuButtons/tsx/NavigationMenuButtons";
 
 export const Header = () => {
   return (
@@ -12,12 +12,12 @@ export const Header = () => {
         <Logo />
       </NavLink>
       <nav className={styleMiddle.middle}>
-        <NavButtons
+        <NavigationMenuButtons
           items={navItems.filter((item) => item.label !== "Contact")}
         />
       </nav>
       <div >
-        <NavButtons
+        <NavigationMenuButtons
           items={navItems.filter((item) => item.label === "Contact")}
         />
       </div>

@@ -1,0 +1,213 @@
+.left {
+  width: 30%;
+  display: flex;
+  min-height: var(--hero-height);
+  align-items: center;
+  font-family: var(--poppins);
+
+  animation: leftEntry 700ms ease-in 0.1s forwards ;
+  opacity: 0;
+}
+
+@keyframes leftEntry {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.leftContainer {
+  height: 80%;
+  display: grid;
+  align-items: center;
+  gap: 15px;
+}
+
+/*  --------------------------------------  */
+/*          HEADING      */
+/* ---- */
+
+.firstDiv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--poppins);
+}
+
+.firstDiv > :nth-child(1) {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833AB4", endColorstr="#FCB045", GradientType=1);
+}
+
+.firstDiv > :nth-child(2) {
+  font-size: 10px;
+}
+
+.secondDiv > h1 {
+  font-size: clamp(0.1rem, 5vw, 3rem);
+}
+
+/*  */
+
+.secondDiv > :nth-child(2) {
+  background: #000000;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(105, 105, 105, 1) 79%,
+    rgba(145, 144, 144, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(105, 105, 105, 1) 79%,
+    rgba(145, 144, 144, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(105, 105, 105, 1) 79%,
+    rgba(145, 144, 144, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#919090", GradientType=1);
+  /*  */
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.secondDiv > :nth-child(3) {
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  /*  */
+  background-clip: text;
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*  */
+
+.thirdDiv * {
+  font-size: 0.9rem;
+}
+/*  */
+
+.fourthDiv {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  align-items: center;
+}
+
+.fourthDiv > :nth-child(1) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /*  */
+
+  background: #000000;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(69, 69, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(69, 69, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(69, 69, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#454545", GradientType=1);
+  /*  */
+  color: white;
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgb(29, 29, 29);
+}
+
+.fourthDiv > :nth-child(1):active {
+  box-shadow: 0px 0px 8px rgb(29, 29, 29);
+}
+
+.fourthDiv > :nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  width: fit-content;
+  padding: 5px 10px 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px -1px rgb(29, 29, 29);
+}
+
+.fourthDiv > :nth-child(2):active {
+  box-shadow: 0px 0px 5px 1px rgb(29, 29, 29);
+}
+
+/*  */
+
+.fifthDiv > ul,
+.fifthDiv > ul li {
+  display: flex;
+  color: rgb(148, 148, 148);
+  align-items: center;
+  font-size: 2rem;
+  gap: 20px;
+}
+
+.fifthDiv {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: rgb(148, 148, 148);
+}

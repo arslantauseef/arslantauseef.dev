@@ -1,0 +1,96 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  isolation: isolate;
+}
+
+.primary {
+  color: black;
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.active {
+  color: white;
+}
+
+.navBlob {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  border-radius: 7px;
+  background: linear-gradient(
+    81deg,
+    rgba(128, 128, 128, 1) 0%,
+    rgba(5, 5, 5, 1) 50%,
+    rgba(166, 166, 166, 1) 100%
+  );
+  background-size: 220% 220%;
+  background-position: 70% 100%;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.55s ease,
+    width 0.55s ease,
+    height 0.55s ease,
+    opacity 0.2s ease;
+
+    /* animation: navblob 6s ease-in-out infinite, navBlobBackground 3.5s ease-in-out infinite; */
+}
+
+@keyframes navblob {
+  /* 0% {
+    border-radius: 50% 50% 48% 52% / 52% 48% 52% 48%;
+  }
+
+  25% {
+    border-radius: 56% 44% 52% 48% / 47% 54% 46% 53%;
+  }
+
+  50% {
+    border-radius: 46% 54% 55% 45% / 55% 46% 54% 45%;
+  }
+
+  75% {
+    border-radius: 53% 47% 44% 56% / 48% 55% 45% 52%;
+  }
+
+  100% {
+    border-radius: 50% 50% 48% 52% / 52% 48% 52% 48%;
+  } */
+}
+
+@keyframes navBlobBackground {
+   0% {
+    background-position: 50% 0%;
+  }
+
+  25% {
+    background-position: 100% 50%;
+  }
+
+  50% {
+    background-position: 50% 100%;
+  }
+
+  75% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+
+.primary::before,
+.primary::after,
+.active::before,
+.active::after {
+  content: none !important;
+}

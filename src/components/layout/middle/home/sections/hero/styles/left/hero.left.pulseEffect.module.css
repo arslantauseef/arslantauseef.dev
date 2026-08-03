@@ -1,0 +1,31 @@
+.pulseEffect {
+  animation: cicularPulseEffect 1s linear infinite;
+}
+
+.textPulseEffect {
+  animation: TextPulseEffect 1s linear infinite;
+}
+
+@keyframes cicularPulseEffect {
+  0% {
+    box-shadow: none;
+  }
+  50% {
+    box-shadow: 0px 0px 10px rgb(195, 56, 28);
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes TextPulseEffect {
+  0% {
+    color: rgb(148, 148, 148);
+  }
+  50% {
+    color: rgb(100, 100, 100);
+  }
+  100% {
+    color: rgb(148, 148, 148);
+  }
+}

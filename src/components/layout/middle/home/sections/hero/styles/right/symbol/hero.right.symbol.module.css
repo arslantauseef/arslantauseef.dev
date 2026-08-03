@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+.symbol {
+  position: absolute;
+  width: min(15%, 360px);
+  height: min(18%, 320px);
+  top: 5%;
+  right: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 3;
+
+  /* Glasmorphish Effect */
+  background: rgba(0, 0, 0, 0.86);
+  border-radius: 16px;
+  backdrop-filter: blur(4.8px);
+  -webkit-backdrop-filter: blur(4.8px);
+  animation: animateSymbol 5s ease-in-out infinite;
+}
+
+.symbol > h4 {
+  /* background colorr */
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833AB4", endColorstr="#FCB045", GradientType=1);
+  background-clip: text;
+  color: transparent;
+  font-size: clamp(0.1rem, 3dvw, 5rem);
+  font-family: "Karla", sans-serif;
+}
+
+@keyframes animateSymbol {
+  0% {
+    transform: rotateX(6deg) rotateY(10deg) translateZ(100px);
+  }
+  50% {
+    transform: rotateX(3deg) rotateY(-10deg) translateZ(100px);
+  }
+  100% {
+    transform: rotateX(6deg) rotateY(10deg) translateZ(100px);
+  }
+}
