@@ -4,7 +4,7 @@
   position: absolute;
   width: min(15%, 360px);
   height: min(18%, 320px);
-  top: 5%;
+  top: 10%;
   right: 15%;
   display: flex;
   justify-content: center;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styleRightMessageElement from "../styles/rotatingMessages.module.css";
 import styleRightMessagePulseEffect from "../styles/rotatingMessages.pulseEffect.module.css";
 type Message = {
