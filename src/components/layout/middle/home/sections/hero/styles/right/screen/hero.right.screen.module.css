@@ -2,14 +2,14 @@
   position: absolute;
   width: min(62%, 720px);
   height: min(70%, 620px);
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
   left: 50%;
   top: 48%;
   z-index: 2;
   transform: translate(-50%, -50%) rotateY(-18deg) rotateX(8deg);
   border-radius: 20px;
   animation: screenFloatingEffect 5s ease-in-out infinite;
-
-
 
   background: #000000;
   background: -webkit-linear-gradient(
@@ -33,8 +33,6 @@
     30px 30px 60px rgba(0, 0, 0, 0.25),
     inset 0 0 0 1px rgba(255, 255, 255, 0.08);
 
-
-
   /* Glasmorphish Effect */
   background: rgba(0, 0, 0, 0.86);
   border-radius: 16px;
@@ -52,4 +50,11 @@
   100% {
     transform: translate(-50%, -50%) rotateY(-18deg) rotateX(8deg);
   }
+}
+
+.screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
 }

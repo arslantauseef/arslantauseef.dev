@@ -6,6 +6,7 @@ import styleLeftPulseEffect from "../styles/left/hero.left.pulseEffect.module.cs
 import styleRightSymbol from "../styles/right/symbol/hero.right.symbol.module.css";
 import { NavLink } from "react-router-dom";
 import { MdArrowOutward, MdArrowRightAlt } from "react-icons/md";
+import DP from "../../../../../../assets/images/Picture.jpeg"
 
 // import image from "../../../../../../assets/images/WhatsApp Image 2026-01-03 at 01.15.34 2.png";
 
@@ -78,19 +79,9 @@ export const Hero = () => {
       <section className={styleRight.right}>
         {/* MAIN SCREEN ELEMENT */}
         <div className={styleRightScreen.screen}>
-          {/* <img src={image} alt="Here supposed to be an image, right?" /> */}
+          <img src={DP} alt="Here supposed to be an image, right?" />
         </div>
-        {/* <div className={styleRightMessage.message}>
-          <div className={styleRightMessage.headingWrapper}>
-            <div className={styleRightMessage.heading}>
-              <div className={styleRightMessagePulseEffect.pulseEffect}></div>
-              <h4>Available to work</h4>
-              <p className={styleRightMessage.displayMessage}>
-                Let's build something great
-              </p>
-            </div>
-          </div>
-        </div> */}
+
         {/* MESSAGE ELEMENT */}
         <RotatingMessages items={messages} />
         {/* CODING ELEMENT */}
