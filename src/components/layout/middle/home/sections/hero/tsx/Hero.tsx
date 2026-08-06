@@ -6,7 +6,7 @@ import styleLeftPulseEffect from "../styles/left/hero.left.pulseEffect.module.cs
 import styleRightSymbol from "../styles/right/symbol/hero.right.symbol.module.css";
 import { NavLink } from "react-router-dom";
 import { MdArrowOutward, MdArrowRightAlt } from "react-icons/md";
-import DP from "../../../../../../assets/images/Picture.jpeg"
+import DP from "../../../../../../assets/images/picture.png"
 
 // import image from "../../../../../../assets/images/WhatsApp Image 2026-01-03 at 01.15.34 2.png";
 

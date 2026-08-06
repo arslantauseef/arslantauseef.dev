@@ -1,10 +1,10 @@
 .left {
-  width: 30%;
+  width: 40%;
   display: flex;
   min-height: var(--hero-height);
   align-items: center;
   font-family: var(--poppins);
-
+  padding: 0 0 0 50px;
   animation: leftEntry 700ms ease-in 0.1s forwards ;
   opacity: 0;
 }
