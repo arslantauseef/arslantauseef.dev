@@ -17,6 +17,9 @@
 }
 
 .rightFigure {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   border-radius: 0.6rem;
   height: 90%;
   width: 100%;

@@ -14,7 +14,8 @@ export const Experience = () => {
       {/* Right */}
       <section className={styleRightExperience.right}>
         <div id={styleRightExperience.rightContainer}>
-          <figure className={styleRightExperience.rightFigure}></figure>
+          <figure className={styleRightExperience.rightFigure}>
+          </figure>
         </div>
       </section>
     </main>
