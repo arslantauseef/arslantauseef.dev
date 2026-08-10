@@ -1,19 +1,20 @@
 import styleExperience from "../styles/main/experience.global.module.css";
-import styleRightExperience from "../styles/right/experience.right.module.css"
-import { LeftContainer, arrayOfExperienceSection } from "../features/leftScrollEffect/tsx/LeftContainer";
+import styleRightExperience from "../styles/right/experience.right.module.css";
+import {
+  LeftContainer,
+  arrayOfExperienceSection,
+} from "../features/leftScrollEffect/tsx/LeftContainer";
 export const Experience = () => {
-
-  
   return (
     <main className={styleExperience.experience}>
       {/* Left */}
-    <LeftContainer items={arrayOfExperienceSection} />
+      <LeftContainer
+        items={arrayOfExperienceSection}
+      />
       {/* Right */}
       <section className={styleRightExperience.right}>
         <div id={styleRightExperience.rightContainer}>
-          <figure className={styleRightExperience.rightFigure}>
-
-          </figure>
+          <figure className={styleRightExperience.rightFigure}></figure>
         </div>
       </section>
     </main>

@@ -1,14 +1,45 @@
 .logoLink {
-  width: 56px;
+  width: fit-content;
   height: 56px;
-  display: inline-flex;
+
+  display: flex;
   align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  justify-content: flex-start;
+}
+
+.logoLink > h4 {
+  font-size: clamp(0.8rem, 1dvw, 1rem);
+
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  background-size: 500%;
+  background-position: 100% 50%;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: logoTextAnimation 3s ease-in-out infinite;
+}
+
+@keyframes logoTextAnimation {
+  0% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .logo {
-    width: 100%;
-    height: 100%;
+  width: 65px;
+  height: 65px;
 }
-

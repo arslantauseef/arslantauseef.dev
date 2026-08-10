@@ -1,8 +1,9 @@
+import { useEffect, useRef, useState } from "react";
 import { Orb } from "../../../../../../../../global_feature/orb/tsx/Orb";
 import styleLeftExperience from "../../../styles/left/experience.left.module.css";
 import styleLeftScrollEffect from "../styles/leftScrollEffect.module.css";
 
-type ExperienceStage = "frontend" | "backend" | "database";
+export type ExperienceStage = "frontend" | "backend" | "database";
 
 type ExperienceSection = {
   stage: ExperienceStage;
@@ -47,20 +48,62 @@ export const arrayOfExperienceSection = [
   },
 ] as const satisfies readonly ExperienceSection[];
 
-type Props = {
+export type Props = {
   items: readonly ExperienceSection[];
 };
 
 export const LeftContainer = (props: Props) => {
+  const articleRefs = useRef<(HTMLElement | null)[]>([]);
+  const [activeStage, setActiveStage] = useState<ExperienceStage>("frontend");
+
+  useEffect(() => {
+    const detectActiveStage = () => {
+      const activationLine = window.innerHeight / 2;
+
+      const activeIndex = articleRefs.current.findIndex((element) => {
+        if (!element) return false;
+
+        const articleRect = element.getBoundingClientRect();
+
+        return (
+          articleRect.top <= activationLine &&
+          articleRect.bottom > activationLine
+        );
+      });
+
+      const nextStage = props.items[activeIndex]?.stage;
+
+      setActiveStage(nextStage);
+
+      if (activeIndex === -1) return;
+    };
+
+    detectActiveStage();
+
+    window.addEventListener("scroll", detectActiveStage, {
+      passive: true,
+    });
+
+    window.addEventListener("resize", detectActiveStage);
+
+    return () => {
+      window.removeEventListener("scroll", detectActiveStage);
+      window.removeEventListener("resize", detectActiveStage);
+    };
+  }, [props.items]);
 
   return (
     <section className={styleLeftExperience.left}>
-      {props.items.map((item) => {
+      {props.items.map((item, index) => {
+        const IsStageActive = activeStage === item.stage;
         return (
           <article
-            className={`${[styleLeftExperience.leftContainer]} ${[styleLeftScrollEffect.leftContainer]}`}
+            className={`${[styleLeftExperience.leftContainer]} ${[styleLeftScrollEffect.leftContainer]} ${IsStageActive ? styleLeftScrollEffect.active : ""}`}
             key={item.stage}
-            data-usage={item.stage}
+            data-stage={item.stage}
+            ref={(element) => {
+              articleRefs.current[index] = element;
+            }}
           >
             <div>
               <Orb />
@@ -68,8 +111,7 @@ export const LeftContainer = (props: Props) => {
             </div>
             <span>{item.number}</span>
             <h2>
-              {item.title_1} <br />{" "}
-              <span>{item.title_2}</span>{" "}
+              {item.title_1} <br /> <span>{item.title_2}</span>{" "}
             </h2>
             <p>{item.description}</p>
             <ul>

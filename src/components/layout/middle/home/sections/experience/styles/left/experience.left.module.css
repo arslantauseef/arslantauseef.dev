@@ -9,5 +9,6 @@
   flex-direction: column;
   justify-content: center;
   font-family: var(--poppins);
+  gap: 15px;
 }
 
