@@ -852,7 +852,7 @@ type Props = {
 export const FigureCards = (props: Props) => {
   return (
     <figure className={styleFigureCards.figure} >
-      {props.items.map((item, index) => {
+      {props.items.map((item) => {
         const Component = item.component;
         return <Component key={item.name} style={item.styles.card} svgStyle={item.styles.svg} spanStyle={item.styles.span} />;
       })}

@@ -1,4 +1,3 @@
-import styleNode from "../styles/node.module.css"
 import { FaNode } from "react-icons/fa6";
 import type React from "react";
 type Props = {

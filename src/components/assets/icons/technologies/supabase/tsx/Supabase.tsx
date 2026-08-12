@@ -1,4 +1,3 @@
-import styleSupabase from "../styles/supabase.module.css"
 import { RiSupabaseFill } from "react-icons/ri";
 type Props = {
   id?: string;

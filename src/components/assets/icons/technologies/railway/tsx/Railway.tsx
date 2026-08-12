@@ -1,4 +1,3 @@
-import styleRailway from "../styles/railway.module.css"
 import { SiRailway } from "react-icons/si";
 type Props = {
   id?: string;

@@ -1,6 +1,5 @@
 import styleExperience from "../styles/main/experience.global.module.css";
 import styleRightExperience from "../styles/right/experience.right.module.css";
-import styleRightPositions from "../styles/right/experience.positions.module.css";
 import {
   LeftContainer,
   arrayOfExperienceSection,

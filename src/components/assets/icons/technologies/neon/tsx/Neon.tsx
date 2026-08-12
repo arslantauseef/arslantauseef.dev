@@ -1,5 +1,4 @@
 import { SiNeon } from "react-icons/si";
-import styleNeon from "../styles/neon.module.css";
 import type React from "react";
 type Props = {
   id?: string;

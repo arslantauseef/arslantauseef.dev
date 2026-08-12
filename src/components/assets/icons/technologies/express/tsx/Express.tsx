@@ -1,5 +1,4 @@
 import { SiExpress } from "react-icons/si";
-import styleExpress from "../styles/express.module.css";
 import type React from "react";
 type Props = {
   id?: string;

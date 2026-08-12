@@ -1,4 +1,3 @@
-import styleRender from "../styles/render.module.css"
 import { SiRender } from "react-icons/si";
 type Props = {
   id?: string;
