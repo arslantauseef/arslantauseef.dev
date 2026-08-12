@@ -1,4 +1,6 @@
-import { FaReact } from "react-icons/fa";
+import styleNode from "../styles/node.module.css"
+import { FaNode } from "react-icons/fa6";
+import type React from "react";
 type Props = {
   id?: string;
   className?: string;
@@ -7,12 +9,11 @@ type Props = {
   spanStyle?: React.CSSProperties;
 };
 
-
-export const ReactJs = (props: Props) => {
+export const Node = (props: Props) => {
   return (
     <div id={props.id} className={props.className} style={props.style}>
-        <FaReact style={props.svgStyle} />
-        <span style={props.spanStyle} >React</span>
+        <FaNode style={props.svgStyle}/>
+        <span style={props.spanStyle}>Node</span>
     </div>
   )
 }

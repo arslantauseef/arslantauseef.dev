@@ -1,22 +1,4 @@
-.right {
-  min-height: 100vh;
-  width: 60%;
-  position: relative;
-}
-
-#rightContainer {
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  width: 100%;
-  /* background-color: rgba(241, 233, 151, 0.884); */
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rightFigure {
+.figure {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);

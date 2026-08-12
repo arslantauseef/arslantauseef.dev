@@ -1,0 +1,87 @@
+.positions > :global(#react) {
+  color: white;
+  background-color: rgb(230, 234, 234);
+
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+
+  width: 50%;
+  height: 70%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  justify-self: center;
+  align-self: center;
+
+  gap: 5px;
+
+  border-radius: 10px;
+  border: 2px solid #d9dada;
+
+  box-shadow: 0 0 20px -1px #d7d8d8;
+
+  transform: scale3d(1, 1, 1);
+  transform-origin: center center;
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    background-color 300ms ease,
+    box-shadow 300ms ease;
+
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+
+.positions > :global(#react) > svg {
+  color: #838486;
+
+  width: 1.3em;
+  height: 1.3em;
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+
+  transition: color 300ms ease;
+}
+
+
+.positions > :global(#react) > span {
+  color: #838486;
+
+  font-size: 8px;
+  line-height: 8px;
+
+  font-family: var(--poppins);
+
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform;
+
+  transition: color 300ms ease;
+}
+
+
+.positions > :global(#react):hover {
+  transform: scale3d(1.09, 1.09, 1);
+
+  border-color: #83c5f1;
+  background-color: white;
+
+  box-shadow: 0 0 10px -1px #83c5f1;
+}
+
+
+.positions > :global(#react):hover > span {
+  color: #000;
+}
+
+
+.positions > :global(#react):hover > svg {
+  color: #83c5f1;
+}

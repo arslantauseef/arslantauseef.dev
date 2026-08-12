@@ -1,4 +1,5 @@
-import { FaReact } from "react-icons/fa";
+import { BiLogoPostgresql } from "react-icons/bi";
+
 type Props = {
   id?: string;
   className?: string;
@@ -7,12 +8,11 @@ type Props = {
   spanStyle?: React.CSSProperties;
 };
 
-
-export const ReactJs = (props: Props) => {
+export const PostgreSQL = (props: Props) => {
   return (
     <div id={props.id} className={props.className} style={props.style}>
-        <FaReact style={props.svgStyle} />
-        <span style={props.spanStyle} >React</span>
+      <BiLogoPostgresql style={props.svgStyle} />
+      <span style={props.spanStyle}>PostgreSQL</span>
     </div>
-  )
-}
+  );
+};

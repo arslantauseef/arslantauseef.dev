@@ -1,4 +1,5 @@
-import { FaReact } from "react-icons/fa";
+import styleRailway from "../styles/railway.module.css"
+import { SiRailway } from "react-icons/si";
 type Props = {
   id?: string;
   className?: string;
@@ -8,11 +9,11 @@ type Props = {
 };
 
 
-export const ReactJs = (props: Props) => {
+export const Railway = (props: Props) => {
   return (
     <div id={props.id} className={props.className} style={props.style}>
-        <FaReact style={props.svgStyle} />
-        <span style={props.spanStyle} >React</span>
+      <SiRailway style={props.svgStyle} />
+      <span style={props.spanStyle} >Railway</span>
     </div>
-  )
-}
+  );
+};

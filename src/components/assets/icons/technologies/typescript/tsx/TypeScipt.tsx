@@ -1,4 +1,4 @@
-import { FaReact } from "react-icons/fa";
+import { SiTypescript } from "react-icons/si";
 type Props = {
   id?: string;
   className?: string;
@@ -6,13 +6,11 @@ type Props = {
   svgStyle?: React.CSSProperties;
   spanStyle?: React.CSSProperties;
 };
-
-
-export const ReactJs = (props: Props) => {
+export const TypeScript = (props: Props) => {
   return (
     <div id={props.id} className={props.className} style={props.style}>
-        <FaReact style={props.svgStyle} />
-        <span style={props.spanStyle} >React</span>
+        <SiTypescript style={props.svgStyle} />
+        <span style={props.spanStyle} >TypeScript</span>
     </div>
   )
 }

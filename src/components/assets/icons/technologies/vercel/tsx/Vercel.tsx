@@ -1,4 +1,4 @@
-import { FaReact } from "react-icons/fa";
+import { SiVercel } from "react-icons/si";
 type Props = {
   id?: string;
   className?: string;
@@ -7,12 +7,11 @@ type Props = {
   spanStyle?: React.CSSProperties;
 };
 
-
-export const ReactJs = (props: Props) => {
+export const Vercel = (props: Props) => {
   return (
     <div id={props.id} className={props.className} style={props.style}>
-        <FaReact style={props.svgStyle} />
-        <span style={props.spanStyle} >React</span>
+      <SiVercel style={props.svgStyle} />
+      <span style={props.spanStyle}>Vercel</span>
     </div>
-  )
-}
+  );
+};
