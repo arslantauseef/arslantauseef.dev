@@ -1,4 +1,4 @@
-import styleFigureCards from "../styles/figurecards.module.css"
+import styleFigureCards from "../styles/figurecards.module.css";
 import { Express } from "../../../../../../../../assets/icons/technologies/express/tsx/Express";
 import { Neon } from "../../../../../../../../assets/icons/technologies/neon/tsx/Neon";
 import { Node } from "../../../../../../../../assets/icons/technologies/node/tsx/Node";
@@ -11,16 +11,16 @@ import { TypeScript } from "../../../../../../../../assets/icons/technologies/ty
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
 
 type CardComponentProps = {
-    id?: string,
-    className?: string,
-    style?: React.CSSProperties,
-    svgStyle?: React.CSSProperties,
-    spanStyle?: React.CSSProperties,
-}
+  id?: string;
+  className?: string;
+  style?: React.CSSProperties;
+  svgStyle?: React.CSSProperties;
+  spanStyle?: React.CSSProperties;
+};
 
 type DefinedCards = {
   name: string;
-  component: React.ComponentType<CardComponentProps>
+  component: React.ComponentType<CardComponentProps>;
 
   styles: {
     card: React.CSSProperties;
@@ -851,11 +851,29 @@ type Props = {
 
 export const FigureCards = (props: Props) => {
   return (
-    <figure className={styleFigureCards.figure} >
-      {props.items.map((item) => {
-        const Component = item.component;
-        return <Component key={item.name} style={item.styles.card} svgStyle={item.styles.svg} spanStyle={item.styles.span} />;
-      })}
-    </figure>
+    <div className={styleFigureCards.wrapper}>
+      <div className={styleFigureCards.wrapperHeader}>
+        <span>TECH STACK</span>
+        <span>FRONT END ENGINEERING</span>
+      </div>
+      <hr />
+      <figure className={styleFigureCards.figure}>
+        {props.items.map((item) => {
+          const Component = item.component;
+          return (
+            <Component
+              key={item.name}
+              style={item.styles.card}
+              svgStyle={item.styles.svg}
+              spanStyle={item.styles.span}
+            />
+          );
+        })}
+      </figure>
+      <hr />
+      <div className={styleFigureCards.wrapperFooter}>
+        <span>Footer</span>
+      </div>
+    </div>
   );
 };

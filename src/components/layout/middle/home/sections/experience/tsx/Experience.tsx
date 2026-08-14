@@ -4,7 +4,10 @@ import {
   LeftContainer,
   arrayOfExperienceSection,
 } from "../features/leftScrollEffect/tsx/LeftContainer";
-import { FigureCards, definedCards } from "../features/FigureCards/tsx/FigureCards";
+import {
+  FigureCards,
+  definedCards,
+} from "../features/FigureCards/tsx/FigureCards";
 export const Experience = () => {
   return (
     <main className={styleExperience.experience}>
@@ -13,15 +16,6 @@ export const Experience = () => {
       {/* Right */}
       <section className={styleRightExperience.right}>
         <div id={styleRightExperience.rightContainer}>
-          {/* <div>
-            <div>MY STACH</div>
-            <div></div>
-          </div> */}
-          {/* <figure
-            className={`${styleRightExperience.rightFigure} ${styleRightPositions.positions}`}
-          >
-            <React />
-          </figure> */}
           <FigureCards items={definedCards} />
         </div>
       </section>

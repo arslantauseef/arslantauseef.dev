@@ -25,7 +25,12 @@
   width: 100%;
   box-shadow: 0px 0px 12px -1px rgb(161, 178, 190);
 
-  background: linear-gradient(135deg, #fffffff0 0%, #f4f7ffc7 45%, #ffffffe6 100%);
+  background: linear-gradient(
+    135deg,
+    #fffffff0 0%,
+    #f4f7ffc7 45%,
+    #ffffffe6 100%
+  );
 
   /* background-color: rgb(240, 245, 249); */
 
@@ -56,3 +61,4 @@
     background-position: 0% 50%;
   }
 }
+
