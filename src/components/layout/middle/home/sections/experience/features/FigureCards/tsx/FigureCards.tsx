@@ -9,6 +9,8 @@ import { Render } from "../../../../../../../../assets/icons/technologies/render
 import { Supabase } from "../../../../../../../../assets/icons/technologies/supabase/tsx/Supabase";
 import { TypeScript } from "../../../../../../../../assets/icons/technologies/typescript/tsx/TypeScipt";
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
+import { useEffect, useRef } from "react";
+
 
 type CardComponentProps = {
   id?: string;
@@ -16,12 +18,12 @@ type CardComponentProps = {
   style?: React.CSSProperties;
   svgStyle?: React.CSSProperties;
   spanStyle?: React.CSSProperties;
+  cardRef?: React.Ref<HTMLDivElement>;
 };
 
 type DefinedCards = {
   name: string;
   component: React.ComponentType<CardComponentProps>;
-
   styles: {
     card: React.CSSProperties;
     svg: React.CSSProperties;
@@ -44,8 +46,8 @@ export const definedCards = [
         gridColumn: "1 / 2",
         gridRow: "1 / 2",
 
-        width: "50%",
-        height: "70%",
+        width: "55%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -87,8 +89,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -126,7 +128,7 @@ export const definedCards = [
         gridRow: "2 / 3",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -168,8 +170,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -207,7 +209,7 @@ export const definedCards = [
         gridRow: "1 / 2",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -249,8 +251,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -288,7 +290,7 @@ export const definedCards = [
         gridRow: "4 / 5",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -330,8 +332,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -368,8 +370,8 @@ export const definedCards = [
         gridColumn: "4 / 5",
         gridRow: "6 / 7",
 
-        width: "60%",
-        height: "70%",
+        width: "55%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -411,8 +413,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -450,7 +452,7 @@ export const definedCards = [
         gridRow: "8 / 9",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -492,8 +494,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -531,7 +533,7 @@ export const definedCards = [
         gridRow: "8 / 9",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -573,8 +575,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -612,7 +614,7 @@ export const definedCards = [
         gridRow: "4 / 5",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -654,8 +656,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -693,7 +695,7 @@ export const definedCards = [
         gridRow: "1 / 2",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -735,8 +737,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -774,7 +776,7 @@ export const definedCards = [
         gridRow: "5 / 6",
 
         width: "55%",
-        height: "70%",
+        height: "85%",
 
         display: "flex",
         flexDirection: "column",
@@ -816,8 +818,8 @@ export const definedCards = [
 
       span: {
         color: "#838486",
-        fontSize: "8px",
-        lineHeight: "8px",
+        fontSize: "6px",
+        lineHeight: "6px",
         fontFamily: "var(--poppins)",
 
         transform: "translateZ(0)",
@@ -850,19 +852,27 @@ type Props = {
 };
 
 export const FigureCards = (props: Props) => {
+  const figureRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!figureRef.current) return;
+
+    const containerRect = figureRef.current.getBoundingClientRect();
+  }, []);
+
   return (
     <div className={styleFigureCards.wrapper}>
       <div className={styleFigureCards.wrapperHeader}>
-        <span>TECH STACK</span>
-        <span>FRONT END ENGINEERING</span>
+        <span>Header</span>
       </div>
       <hr />
-      <figure className={styleFigureCards.figure}>
+      <figure ref={figureRef} className={styleFigureCards.figure}>
         {props.items.map((item) => {
           const Component = item.component;
           return (
             <Component
               key={item.name}
+
               style={item.styles.card}
               svgStyle={item.styles.svg}
               spanStyle={item.styles.span}
