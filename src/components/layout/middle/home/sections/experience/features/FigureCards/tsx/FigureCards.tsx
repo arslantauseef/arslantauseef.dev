@@ -9,8 +9,7 @@ import { Render } from "../../../../../../../../assets/icons/technologies/render
 import { Supabase } from "../../../../../../../../assets/icons/technologies/supabase/tsx/Supabase";
 import { TypeScript } from "../../../../../../../../assets/icons/technologies/typescript/tsx/TypeScipt";
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
-import { useEffect, useRef } from "react";
-
+import { useEffect, useRef, useState } from "react";
 
 type CardComponentProps = {
   id?: string;
@@ -845,20 +844,68 @@ export const definedCards = [
       },
     },
   },
-] satisfies DefinedCards[];
+] as const satisfies readonly DefinedCards[];
 
 type Props = {
-  items: DefinedCards[];
+  items: readonly DefinedCards[];
+};
+
+type CardName = (typeof definedCards)[number]["name"];
+type Point = {
+  x: number;
+  y: number;
 };
 
 export const FigureCards = (props: Props) => {
-  const figureRef = useRef<HTMLDivElement | null>(null);
+  const figureRef = useRef<HTMLElement | null>(null);
+  const cardRefs = useRef<Partial<Record<CardName, HTMLDivElement>>>({});
+  const [cardCenters, setCardCenters] = useState<any>({});
+
+  const getCardCenter = (name: CardName): Point | null => {
+    const figure = figureRef.current;
+    const card = cardRefs.current[name];
+
+    if (!figure || !card) return null;
+
+    const figureRect = figure.getBoundingClientRect();
+    const cardRect = card.getBoundingClientRect();
+
+    return {
+      x: cardRect.left - figureRect.left + cardRect.width / 2,
+      y: cardRect.top - figureRect.top + cardRect.height / 2,
+    };
+  };
 
   useEffect(() => {
-    if (!figureRef.current) return;
+    const measureCardCenters = () => {
+      const centers: Partial<Record<CardName, Point>> = {};
 
-    const containerRect = figureRef.current.getBoundingClientRect();
-  }, []);
+      props.items.forEach((item) => {
+        const cardName = item.name as CardName;
+        const center = getCardCenter(cardName);
+
+        if (center) {
+          centers[cardName] = center;
+        }
+      });
+
+      setCardCenters(centers);
+    };
+
+    measureCardCenters();
+
+    const resizeObserver = new ResizeObserver(() => {
+      measureCardCenters();
+    });
+
+    if (figureRef.current) {
+      resizeObserver.observe(figureRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [props.items]);
 
   return (
     <div className={styleFigureCards.wrapper}>
@@ -867,15 +914,36 @@ export const FigureCards = (props: Props) => {
       </div>
       <hr />
       <figure ref={figureRef} className={styleFigureCards.figure}>
+        <svg className={styleFigureCards.connections} aria-hidden="true">
+          {cardCenters.React && cardCenters.TypeScript && (
+            <path
+              d={`
+        M ${cardCenters.React.x} ${cardCenters.React.y}
+        L ${cardCenters.TypeScript.x} ${cardCenters.TypeScript.y}
+      `}
+              fill="none"
+              stroke="#3178c6"
+              strokeWidth="2"
+            />
+          )}
+        </svg>
         {props.items.map((item) => {
           const Component = item.component;
           return (
             <Component
               key={item.name}
-
               style={item.styles.card}
               svgStyle={item.styles.svg}
               spanStyle={item.styles.span}
+              cardRef={(element) => {
+                const cardNames = item.name as CardName;
+
+                if (element) {
+                  cardRefs.current[cardNames] = element;
+                } else {
+                  delete cardRefs.current[cardNames];
+                }
+              }}
             />
           );
         })}

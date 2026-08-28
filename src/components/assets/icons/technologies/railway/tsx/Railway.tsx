@@ -5,12 +5,13 @@ type Props = {
   style?: React.CSSProperties;
   svgStyle?: React.CSSProperties;
   spanStyle?: React.CSSProperties;
+  cardRef?: React.Ref<HTMLDivElement>;
 };
 
 
 export const Railway = (props: Props) => {
   return (
-    <div id={props.id} className={props.className} style={props.style}>
+    <div id={props.id} className={props.className} style={props.style} ref={props.cardRef}>
       <SiRailway style={props.svgStyle} />
       <span style={props.spanStyle} >Railway</span>
     </div>

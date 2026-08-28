@@ -5,11 +5,17 @@ type Props = {
   style?: React.CSSProperties;
   svgStyle?: React.CSSProperties;
   spanStyle?: React.CSSProperties;
+  cardRef?: React.Ref<HTMLDivElement>;
 };
 
 export const Vercel = (props: Props) => {
   return (
-    <div id={props.id} className={props.className} style={props.style}>
+    <div
+      id={props.id}
+      className={props.className}
+      style={props.style}
+      ref={props.cardRef}
+    >
       <SiVercel style={props.svgStyle} />
       <span style={props.spanStyle}>Vercel</span>
     </div>

@@ -6,13 +6,21 @@ type Props = {
   style?: React.CSSProperties;
   svgStyle?: React.CSSProperties;
   spanStyle?: React.CSSProperties;
+  cardRef?: React.Ref<HTMLDivElement>;
 };
 
-export const Express = ({ id, className, style, svgStyle, spanStyle }: Props) => {
+export const Express = ({
+  id,
+  className,
+  style,
+  svgStyle,
+  spanStyle,
+  cardRef
+}: Props) => {
   return (
-    <div id={id} className={className} style={style}>
+    <div id={id} className={className} style={style} ref={cardRef}> 
       <SiExpress style={svgStyle} />
-      <span style={spanStyle} >Express</span>
+      <span style={spanStyle}>Express</span>
     </div>
   );
 };
