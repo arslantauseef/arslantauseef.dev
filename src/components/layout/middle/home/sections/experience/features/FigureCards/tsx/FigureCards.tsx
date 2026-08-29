@@ -11,6 +11,33 @@ import { TypeScript } from "../../../../../../../../assets/icons/technologies/ty
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
 import { useEffect, useRef, useState } from "react";
 
+type ConnectionStage = "frontend" | "backend" | "database"
+
+type ConnectionGroup = {
+  stage: ConnectionStage,
+  from: CardName,
+  targets: readonly CardName[]
+}
+
+const connectionGroups = [
+  {
+    stage: "frontend",
+    from: "React",
+    targets: ["TypeScript", "Vercel"]
+  },
+    {
+    stage: "backend",
+    from: "Express",
+    targets: ["Node", "Railway", "Render"]
+  },
+    {
+    stage: "database",
+    from: "PostgreSQL",
+    targets: ["Neon", "Supabase"]
+  },
+] as const satisfies readonly ConnectionGroup[]
+
+
 type CardComponentProps = {
   id?: string;
   className?: string;
@@ -846,6 +873,8 @@ export const definedCards = [
   },
 ] as const satisfies readonly DefinedCards[];
 
+
+
 type Props = {
   items: readonly DefinedCards[];
 };
@@ -855,6 +884,8 @@ type Point = {
   x: number;
   y: number;
 };
+
+
 
 export const FigureCards = (props: Props) => {
   const figureRef = useRef<HTMLElement | null>(null);
