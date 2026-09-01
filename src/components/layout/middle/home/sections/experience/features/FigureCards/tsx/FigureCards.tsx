@@ -11,32 +11,31 @@ import { TypeScript } from "../../../../../../../../assets/icons/technologies/ty
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
 import { useEffect, useRef, useState } from "react";
 
-type ConnectionStage = "frontend" | "backend" | "database"
+type ConnectionStage = "frontend" | "backend" | "database";
 
 type ConnectionGroup = {
-  stage: ConnectionStage,
-  from: CardName,
-  targets: readonly CardName[]
-}
+  stage: ConnectionStage;
+  from: CardName;
+  targets: readonly CardName[];
+};
 
 const connectionGroups = [
   {
     stage: "frontend",
-    from: "React",
-    targets: ["TypeScript", "Vercel"]
+    from: "TypeScript",
+    targets: ["React", "Vercel"],
   },
-    {
+  {
     stage: "backend",
     from: "Express",
-    targets: ["Node", "Railway", "Render"]
+    targets: ["Node", "Railway", "Render"],
   },
-    {
+  {
     stage: "database",
     from: "PostgreSQL",
-    targets: ["Neon", "Supabase"]
+    targets: ["Neon", "Supabase"],
   },
-] as const satisfies readonly ConnectionGroup[]
-
+] as const satisfies readonly ConnectionGroup[];
 
 type CardComponentProps = {
   id?: string;
@@ -873,8 +872,6 @@ export const definedCards = [
   },
 ] as const satisfies readonly DefinedCards[];
 
-
-
 type Props = {
   items: readonly DefinedCards[];
 };
@@ -885,12 +882,12 @@ type Point = {
   y: number;
 };
 
-
-
 export const FigureCards = (props: Props) => {
   const figureRef = useRef<HTMLElement | null>(null);
   const cardRefs = useRef<Partial<Record<CardName, HTMLDivElement>>>({});
-  const [cardCenters, setCardCenters] = useState<any>({});
+  const [cardCenters, setCardCenters] = useState<
+    Partial<Record<CardName, Point>>
+  >({});
 
   const getCardCenter = (name: CardName): Point | null => {
     const figure = figureRef.current;
@@ -907,7 +904,7 @@ export const FigureCards = (props: Props) => {
     };
   };
 
-  useEffect(() => {
+  const leftTargets = useEffect(() => {
     const measureCardCenters = () => {
       const centers: Partial<Record<CardName, Point>> = {};
 
@@ -946,17 +943,36 @@ export const FigureCards = (props: Props) => {
       <hr />
       <figure ref={figureRef} className={styleFigureCards.figure}>
         <svg className={styleFigureCards.connections} aria-hidden="true">
-          {cardCenters.React && cardCenters.TypeScript && (
-            <path
-              d={`
-        M ${cardCenters.React.x} ${cardCenters.React.y}
-        L ${cardCenters.TypeScript.x} ${cardCenters.TypeScript.y}
-      `}
-              fill="none"
-              stroke="#3178c6"
-              strokeWidth="2"
-            />
-          )}
+          {connectionGroups.map((group) => {
+            const source = cardCenters[group.from];
+            if (!source) return null;
+            const targets: Array<{
+              name: CardName;
+              point: Point;
+            }> = [];
+
+            group.targets.forEach((targetName) => {
+              const point = cardCenters[targetName];
+
+              if (point) {
+                targets.push({
+                  name: targetName,
+                  point: point,
+                });
+              }
+            });
+            return targets.map((target) => {
+              return (
+                <path
+                  key={`${group.from} - ${target.name} `}
+                  d={`M ${source.x} ${source.y} L ${target.point.x} ${target.point.y}`}
+                  fill="none"
+                  stroke="black"
+                  strokeWidth="2"
+                />
+              );
+            });
+          })}
         </svg>
         {props.items.map((item) => {
           const Component = item.component;
