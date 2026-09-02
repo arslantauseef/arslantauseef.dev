@@ -882,6 +882,34 @@ type Point = {
   y: number;
 };
 
+const createRoundedPath = (
+  source: Point,
+  target: Point,
+  trunkX: number,
+): string => {
+  const startDirection = Math.sign(trunkX - source.x);
+  const verticalDirection = Math.sign(target.y - source.y);
+  const endDirection = Math.sign(target.x - trunkX);
+
+  const radius =
+    Math.min(
+      Math.abs(trunkX - source.x),
+      Math.abs(target.y - source.y),
+      Math.abs(target.x - trunkX),
+    ) * 0.15;
+
+  return `
+    M ${source.x} ${source.y}
+    H ${trunkX - startDirection * radius}
+    Q ${trunkX} ${source.y}
+      ${trunkX} ${source.y + verticalDirection * radius}
+    V ${target.y - verticalDirection * radius}
+    Q ${trunkX} ${target.y}
+      ${trunkX + endDirection * radius} ${target.y}
+    H ${target.x}
+  `;
+};
+
 export const FigureCards = (props: Props) => {
   const figureRef = useRef<HTMLElement | null>(null);
   const cardRefs = useRef<Partial<Record<CardName, HTMLDivElement>>>({});
@@ -961,11 +989,35 @@ export const FigureCards = (props: Props) => {
                 });
               }
             });
+
+            const leftTargets = targets.filter((target) => {
+              return target.point.x < source.x;
+            });
+
+            const rightTargets = targets.filter((target) => {
+              return target.point.x > source.x;
+            });
+
+            const leftTrunkX = leftTargets.length
+              ? (source.x + Math.max(...leftTargets.map((t) => t.point.x))) / 2
+              : null;
+
+            const rightTrunkX = rightTargets.length
+              ? (source.x + Math.min(...rightTargets.map((t) => t.point.x))) / 2
+              : null;
+
             return targets.map((target) => {
+              const trunkX =
+                target.point.x < source.x ? leftTrunkX : rightTrunkX;
               return (
                 <path
                   key={`${group.from} - ${target.name} `}
-                  d={`M ${source.x} ${source.y} L ${target.point.x} ${target.point.y}`}
+                  d={
+                    trunkX === null
+                      ? `M ${source.x} ${source.y}
+                      L ${target.point.x} ${target.point.y}`
+                      : createRoundedPath(source, target.point, trunkX)
+                  }
                   fill="none"
                   stroke="black"
                   strokeWidth="2"
