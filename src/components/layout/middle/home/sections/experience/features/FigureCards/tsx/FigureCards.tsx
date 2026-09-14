@@ -953,11 +953,33 @@ export const FigureCards = (props: Props) => {
   return (
     <div className={styleFigureCards.wrapper}>
       <div className={styleFigureCards.wrapperHeader}>
-        <span>Header</span>
+        <span></span>
       </div>
       <hr />
       <figure ref={figureRef} className={styleFigureCards.figure}>
         <svg className={styleFigureCards.connections} aria-hidden="true">
+          <defs>
+            <linearGradient
+              id="connectionGradient"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="0%"
+              spreadMethod="reflect"
+            >
+              <stop offset="0%" stopColor="rgba(131, 58, 180, 1)" />
+              <stop offset="50%" stopColor="rgba(253, 29, 29, 1)" />
+              <stop offset="100%" stopColor="rgba(252, 176, 69, 1)" />
+
+              <animateTransform
+                attributeName="gradientTransform"
+                type="translate"
+                values="-1 0; 1 0; -1 0"
+                dur="5s"
+                repeatCount="indefinite"
+              />
+            </linearGradient>
+          </defs>
           {connectionGroups.map((group) => {
             if (group.stage !== props.activeStage) {
               return null;
@@ -1018,7 +1040,7 @@ export const FigureCards = (props: Props) => {
                       : createRoundedPath(target.point, source, trunkX)
                   }
                   fill="none"
-                  stroke="black"
+                  stroke="url(#connectionGradient)"
                   strokeWidth="2"
                 />
               );
@@ -1067,7 +1089,7 @@ export const FigureCards = (props: Props) => {
       </figure>
       <hr />
       <div className={styleFigureCards.wrapperFooter}>
-        <span>Footer</span>
+        <span></span>
       </div>
     </div>
   );

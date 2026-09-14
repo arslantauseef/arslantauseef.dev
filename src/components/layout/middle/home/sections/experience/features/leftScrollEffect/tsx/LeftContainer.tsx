@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Orb } from "../../../../../../../../global_feature/orb/tsx/Orb";
 import styleLeftExperience from "../../../styles/left/experience.left.module.css";
 import styleLeftScrollEffect from "../styles/leftScrollEffect.module.css";
