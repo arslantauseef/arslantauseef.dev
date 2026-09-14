@@ -38,8 +38,8 @@
 
 .wrapper > hr {
   width: 95%;
-    border: none; /* Removes the default 3D shaded border */
-    border-top: 1px solid #e2e1e1; /* Sets thickness, style, and hex color */
+  border: none; /* Removes the default 3D shaded border */
+  border-top: 1px solid #e2e1e1; /* Sets thickness, style, and hex color */
 }
 
 .figure {
@@ -61,6 +61,25 @@
   width: 100%;
   height: 100%;
   pointer-events: none;
+}
+
+.connectionPath {
+  stroke-dashoffset: -1;
+  stroke-dasharray: 1 1;
+
+  animation: drawPaths 800ms ease forwards;
+  opacity: 0;
+}
+
+@keyframes drawPaths {
+  0% {
+    stroke-dashoffset:  -1;
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset:  0;
+    opacity: 1;
+  }
 }
 
 @keyframes gradientMove {

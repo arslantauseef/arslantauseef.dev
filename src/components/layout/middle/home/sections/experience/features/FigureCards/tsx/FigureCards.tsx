@@ -10,11 +10,10 @@ import { Supabase } from "../../../../../../../../assets/icons/technologies/supa
 import { TypeScript } from "../../../../../../../../assets/icons/technologies/typescript/tsx/TypeScipt";
 import { Vercel } from "../../../../../../../../assets/icons/technologies/vercel/tsx/Vercel";
 import { useEffect, useRef, useState } from "react";
-
-type ConnectionStage = "frontend" | "backend" | "database";
+import type { ExperienceStage } from "../../leftScrollEffect/tsx/LeftContainer";
 
 type ConnectionGroup = {
-  stage: ConnectionStage;
+  stage: ExperienceStage;
   from: CardName;
   targets: readonly CardName[];
 };
@@ -83,10 +82,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -125,7 +124,8 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#83c5f1",
+        border: "2px solid #83c5f1",
+
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #83c5f1",
       },
@@ -162,10 +162,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -204,7 +204,8 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#3178c6",
+        border: "2px solid #3178c6",
+
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #3178c6",
       },
@@ -241,10 +242,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -283,7 +284,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#68a063",
+        border: "2px solid #68a063",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #68a063",
       },
@@ -320,10 +321,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -362,7 +363,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#222",
+        border: "2px solid #222",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #222",
       },
@@ -399,10 +400,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -441,7 +442,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#336791",
+        border: "2px solid #336791",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #336791",
       },
@@ -478,10 +479,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -520,7 +521,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#3ecf8e",
+        border: "2px solid #3ecf8e",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #3ecf8e",
       },
@@ -557,10 +558,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -599,7 +600,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#00e599",
+        border: "2px solid #00e599",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #00e599",
       },
@@ -636,10 +637,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -678,7 +679,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#111",
+        border: "2px solid #111",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #111",
       },
@@ -715,10 +716,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -757,7 +758,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#853bce",
+        border: "2px solid #853bce",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #853bce",
       },
@@ -794,10 +795,10 @@ export const definedCards = [
         gap: "5px",
 
         borderRadius: "10px",
-        border: "2px solid #d9dada",
+        border: "2px solid #dad9d9",
+        boxShadow: "0 0 10px -1px #d4d4d4",
 
         backgroundColor: "rgb(230, 234, 234)",
-        boxShadow: "0 0 20px -1px #d7d8d8",
 
         transform: "scale3d(1, 1, 1)",
         transformOrigin: "center center",
@@ -836,7 +837,7 @@ export const definedCards = [
 
       hover: {
         transform: "scale3d(1.09, 1.09, 1)",
-        borderColor: "#46e3b7",
+        border: "2px solid #46e3b7",
         backgroundColor: "white",
         boxShadow: "0 0 10px -1px #46e3b7",
       },
@@ -854,6 +855,7 @@ export const definedCards = [
 
 type Props = {
   items: readonly DefinedCards[];
+  activeStage: ExperienceStage;
 };
 
 type CardName = (typeof definedCards)[number]["name"];
@@ -912,6 +914,8 @@ export const FigureCards = (props: Props) => {
     };
   };
 
+  console.log(props.activeStage);
+
   useEffect(() => {
     const measureCardCenters = () => {
       const centers: Partial<Record<CardName, Point>> = {};
@@ -943,6 +947,9 @@ export const FigureCards = (props: Props) => {
     };
   }, [props.items]);
 
+  const activeGroup = connectionGroups.find(
+    (group) => group.stage === props.activeStage,
+  );
   return (
     <div className={styleFigureCards.wrapper}>
       <div className={styleFigureCards.wrapperHeader}>
@@ -952,6 +959,9 @@ export const FigureCards = (props: Props) => {
       <figure ref={figureRef} className={styleFigureCards.figure}>
         <svg className={styleFigureCards.connections} aria-hidden="true">
           {connectionGroups.map((group) => {
+            if (group.stage !== props.activeStage) {
+              return null;
+            }
             const source = cardCenters[group.from];
             if (!source) return null;
             const targets: Array<{
@@ -978,25 +988,34 @@ export const FigureCards = (props: Props) => {
               return target.point.x > source.x;
             });
 
+            const trunkRatio = 0.45;
+
             const leftTrunkX = leftTargets.length
-              ? (source.x + Math.max(...leftTargets.map((t) => t.point.x))) / 2
+              ? source.x -
+                (source.x -
+                  Math.max(...leftTargets.map((target) => target.point.x))) *
+                  trunkRatio
               : null;
 
             const rightTrunkX = rightTargets.length
-              ? (source.x + Math.min(...rightTargets.map((t) => t.point.x))) / 2
+              ? source.x +
+                (Math.min(...rightTargets.map((target) => target.point.x)) -
+                  source.x) *
+                  trunkRatio
               : null;
-
             return targets.map((target) => {
               const trunkX =
                 target.point.x < source.x ? leftTrunkX : rightTrunkX;
               return (
                 <path
                   key={`${group.from} - ${target.name} `}
+                  className={styleFigureCards.connectionPath}
+                  pathLength={1}
                   d={
                     trunkX === null
                       ? `M ${source.x} ${source.y}
                       L ${target.point.x} ${target.point.y}`
-                      : createRoundedPath(source, target.point, trunkX)
+                      : createRoundedPath(target.point, source, trunkX)
                   }
                   fill="none"
                   stroke="black"
@@ -1007,13 +1026,32 @@ export const FigureCards = (props: Props) => {
           })}
         </svg>
         {props.items.map((item) => {
+          const isSource = activeGroup?.from === item.name;
+
+          const isTarget =
+            activeGroup?.targets.some((target) => target === item.name) ??
+            false;
+
+          const isActiveCard = isSource || isTarget;
           const Component = item.component;
           return (
             <Component
               key={item.name}
-              style={item.styles.card}
-              svgStyle={item.styles.svg}
-              spanStyle={item.styles.span}
+              style={{
+                ...item.styles.card,
+
+                ...(isActiveCard ? item.styles.hover : {}),
+
+                // opacity: isActiveCard ? 1 : 0.2,
+              }}
+              svgStyle={{
+                ...item.styles.svg,
+                ...(isActiveCard ? item.styles.hoverSvg : {}),
+              }}
+              spanStyle={{
+                ...item.styles.span,
+                ...(isActiveCard ? item.styles.hoverSpan : {}),
+              }}
               cardRef={(element) => {
                 const cardNames = item.name as CardName;
 

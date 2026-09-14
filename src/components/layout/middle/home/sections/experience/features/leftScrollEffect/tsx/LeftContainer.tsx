@@ -50,11 +50,12 @@ export const arrayOfExperienceSection = [
 
 export type Props = {
   items: readonly ExperienceSection[];
+  activeStage: ExperienceStage;
+  onStageChange: (stage: ExperienceStage) => void;
 };
 
 export const LeftContainer = (props: Props) => {
   const articleRefs = useRef<(HTMLElement | null)[]>([]);
-  const [activeStage, setActiveStage] = useState<ExperienceStage>("frontend");
 
   useEffect(() => {
     const detectActiveStage = () => {
@@ -73,7 +74,8 @@ export const LeftContainer = (props: Props) => {
 
       const nextStage = props.items[activeIndex]?.stage;
 
-      setActiveStage(nextStage);
+      props.onStageChange(nextStage)
+
 
       if (activeIndex === -1) return;
     };
@@ -95,7 +97,7 @@ export const LeftContainer = (props: Props) => {
   return (
     <section className={styleLeftExperience.left}>
       {props.items.map((item, index) => {
-        const IsStageActive = activeStage === item.stage;
+        const IsStageActive = props.activeStage === item.stage;
         return (
           <article
             className={`${[styleLeftExperience.leftContainer]} ${[styleLeftScrollEffect.leftContainer]} ${IsStageActive ? styleLeftScrollEffect.active : ""}`}
