@@ -61,15 +61,13 @@ type DefinedCards = {
 };
 
 export const definedCards = [
-  // React
   {
     name: "React",
     component: ReactJs,
 
     styles: {
       card: {
-        gridColumn: "1 / 2",
-        gridRow: "1 / 2",
+        gridArea: "1 / 1 / 2 / 2",
 
         width: "55%",
         height: "85%",
@@ -142,15 +140,13 @@ export const definedCards = [
     },
   },
 
-  // TypeScript
   {
     name: "TypeScript",
     component: TypeScript,
 
     styles: {
       card: {
-        gridColumn: "4 / 5",
-        gridRow: "2 / 3",
+        gridArea: "2 / 3 / 3 / 4",
 
         width: "55%",
         height: "85%",
@@ -223,15 +219,13 @@ export const definedCards = [
     },
   },
 
-  // Node
   {
     name: "Node",
     component: Node,
 
     styles: {
       card: {
-        gridColumn: "8 / 9",
-        gridRow: "1 / 2",
+        gridArea: "3 / 7 / 4 / 8",
 
         width: "55%",
         height: "85%",
@@ -304,15 +298,13 @@ export const definedCards = [
     },
   },
 
-  // Express
   {
     name: "Express",
     component: Express,
 
     styles: {
       card: {
-        gridColumn: "5 / 6",
-        gridRow: "4 / 5",
+        gridArea: "3 / 5 / 4 / 6",
 
         width: "55%",
         height: "85%",
@@ -385,15 +377,13 @@ export const definedCards = [
     },
   },
 
-  // PostgreSQL
   {
     name: "PostgreSQL",
     component: PostgreSQL,
 
     styles: {
       card: {
-        gridColumn: "4 / 5",
-        gridRow: "6 / 7",
+        gridArea: "6 / 4 / 7 / 5",
 
         width: "55%",
         height: "85%",
@@ -466,15 +456,13 @@ export const definedCards = [
     },
   },
 
-  // Supabase
   {
     name: "Supabase",
     component: Supabase,
 
     styles: {
       card: {
-        gridColumn: "2 / 3",
-        gridRow: "8 / 9",
+        gridArea: "7 / 2 / 8 / 3",
 
         width: "55%",
         height: "85%",
@@ -547,15 +535,13 @@ export const definedCards = [
     },
   },
 
-  // Neon
   {
     name: "Neon",
     component: Neon,
 
     styles: {
       card: {
-        gridColumn: "7 / 8",
-        gridRow: "8 / 9",
+        gridArea: "7 / 6 / 8 / 7",
 
         width: "55%",
         height: "85%",
@@ -628,15 +614,13 @@ export const definedCards = [
     },
   },
 
-  // Vercel
   {
     name: "Vercel",
     component: Vercel,
 
     styles: {
       card: {
-        gridColumn: "2 / 3",
-        gridRow: "4 / 5",
+        gridArea: "3 / 1 / 4 / 2",
 
         width: "55%",
         height: "85%",
@@ -709,15 +693,13 @@ export const definedCards = [
     },
   },
 
-  // Railway
   {
     name: "Railway",
     component: Railway,
 
     styles: {
       card: {
-        gridColumn: "6 / 7",
-        gridRow: "1 / 2",
+        gridArea: "1 / 7 / 2 / 8",
 
         width: "55%",
         height: "85%",
@@ -790,15 +772,13 @@ export const definedCards = [
     },
   },
 
-  // Render
   {
     name: "Render",
     component: Render,
 
     styles: {
       card: {
-        gridColumn: "8 / 9",
-        gridRow: "5 / 6",
+        gridArea: "5 / 7 / 6 / 8",
 
         width: "55%",
         height: "85%",
@@ -932,7 +912,7 @@ export const FigureCards = (props: Props) => {
     };
   };
 
-  const leftTargets = useEffect(() => {
+  useEffect(() => {
     const measureCardCenters = () => {
       const centers: Partial<Record<CardName, Point>> = {};
 

@@ -45,8 +45,8 @@
 .figure {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   border-radius: 0.6rem;
   height: 100%;
   width: 100%;
