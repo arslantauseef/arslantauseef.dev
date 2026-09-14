@@ -965,6 +965,7 @@ export const FigureCards = (props: Props) => {
               y1="0%"
               x2="100%"
               y2="0%"
+              gradientUnits="userSpaceOnUse"
               spreadMethod="reflect"
             >
               <stop offset="0%" stopColor="rgba(131, 58, 180, 1)" />
