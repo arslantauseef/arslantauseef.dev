@@ -3,6 +3,8 @@ import styleTop from "../styles/footer.top.module.css";
 import styleBottom from "../styles/footer.bottom.module.css";
 import styleTopLeft from "../styles/footer.top.left.module.css";
 import styleTopRight from "../styles/footer.top.right.module.css";
+import styleBottomLeft from "../styles/footer.bottom.left.module.css";
+import styleBottomRight from "../styles/footer.bottom.right.module.css";
 import LogoPNG from "../../../assets/icons/pngs/Logo.png";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaBehanceSquare } from "react-icons/fa";
@@ -22,33 +24,93 @@ export const Footer = () => {
         </div>
         <div className={styleTopRight.right}></div>
       </section>
+      {/*  */}
+      {/*  */}
+      {/*  */}
       <section className={styleBottom.bottomFooter}>
-        <div className={styleBottom.left}>
-          <div className={styleBottom.left_grid}>
-            <div>
-              <img src={LogoPNG} alt="Arslan Tauseef" />
-              <h5>arslantauseef.dev</h5>
+        <div className={styleBottom.bottomFooter_top}>
+          <div className={styleBottom.wrapper}>
+            <div className={styleBottomLeft.left}>
+              <div className={styleBottomLeft.grid}>
+                <div>
+                  <img src={LogoPNG} alt="" />
+                  <h5>arslantauseef.dev</h5>
+                </div>
+                <div>
+                  <p>
+                    A great website is more than a polished interface; it is a
+                    balance of clean code, thoughtful design, speed, and
+                    usability.
+                  </p>
+                </div>
+                <ul>
+                  <li>
+                    <RiTwitterXLine />
+                  </li>
+                  <li>
+                    <FaBehanceSquare />
+                  </li>
+                  <li>
+                    <FaSquareUpwork />
+                  </li>
+                  <li>
+                    <FaGithubSquare />
+                  </li>
+                  <li>
+                    <FaInstagramSquare />
+                  </li>
+                </ul>
+              </div>
             </div>
-            <ul>
-              <li>
-                <RiTwitterXLine />
-              </li>
-              <li>
-                <FaBehanceSquare />
-              </li>
-              <li>
-                <FaSquareUpwork />
-              </li>
-              <li>
-                <FaGithubSquare />
-              </li>
-              <li>
-                <FaInstagramSquare />
-              </li>
-            </ul>
+            <hr
+              style={{
+                height: "90%",
+                alignSelf: "center",
+              }}
+            />
+            <div className={styleBottomRight.right}>
+              {/* <div className={styleBottomRight.wrapper}>
+                <div>
+                  <h3>Explore</h3>
+                  <ul>
+                    <li>Projects</li>
+                    <li>Features</li>
+                    <li>About</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3>Blog</h3>
+                  <ul>
+                    <li>Dev Notes</li>
+                    <li>Insights</li>
+                    <li>Case Studies</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3>Connect</h3>
+                  <ul>
+                    <li>Contact</li>
+                    <li>GitHub</li>
+                    <li>Upwork</li>
+                  </ul>
+                </div>
+              </div> */}
+            </div>
           </div>
         </div>
-        <div className={styleBottom.right}></div>
+        <div className={styleBottom.bottomFooter_bottom}>
+          {/* <ul>
+            <li>
+              <span>© 2026 Arslan Tauseef. </span>{" "}
+              <span>All rights reserved.</span>
+            </li>
+            <li>
+              <span>Designed & created by</span> <span>Arslan Tauseef.</span>
+            </li>
+          </ul> */}
+        </div>
       </section>
     </footer>
   );
