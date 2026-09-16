@@ -77,27 +77,38 @@ export const NavigationMenuButtons = (props: Props) => {
       return;
     }
 
-    if (activeLink.pathname === "/contact") {
-    }
+    const updateBlob = () => {
+      const extraX = 17;
+      const extraY = 13;
 
-    const extraX = 17;
-    const extraY = 13;
-    const containerRect = container.getBoundingClientRect();
-    const linkRect = activeLink.getBoundingClientRect();
+      const containerRect = container.getBoundingClientRect();
+      const linkRect = activeLink.getBoundingClientRect();
 
-    const x = Math.round(linkRect.left - containerRect.left - extraX / 2);
-    const y = Math.round(linkRect.top - containerRect.top - extraY / 2);
-    const width = Math.round(linkRect.width + extraX);
-    const height = Math.round(linkRect.height + extraY);
+      const x = Math.round(linkRect.left - containerRect.left - extraX / 2);
 
-    setBlob({
-      x,
-      y,
-      width,
-      height,
-      visible: true,
+      const y = Math.round(linkRect.top - containerRect.top - extraY / 2);
+
+      setBlob({
+        x,
+        y,
+        width: Math.round(linkRect.width + extraX),
+        height: Math.round(linkRect.height + extraY),
+        visible: true,
+      });
+    };
+
+    updateBlob();
+
+    const observer = new ResizeObserver(() => {
+      updateBlob();
     });
 
+    observer.observe(activeLink);
+    observer.observe(container);
+
+    return () => {
+      observer.disconnect();
+    };
   }, [location.pathname]);
 
   return (

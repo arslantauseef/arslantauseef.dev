@@ -36,3 +36,13 @@
   color: rgb(82, 82, 82);
 }
 
+.wrapper > div > ul > li {
+  transform: translate(0);
+  transition: transform 500ms;
+}
+
+.wrapper > div > ul > li:hover {
+  transform: translateX(5px);
+  color: black;
+}
+
