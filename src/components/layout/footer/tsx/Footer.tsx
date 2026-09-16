@@ -69,47 +69,50 @@ export const Footer = () => {
               }}
             />
             <div className={styleBottomRight.right}>
-              {/* <div className={styleBottomRight.wrapper}>
+              <div className={styleBottomRight.wrapper}>
                 <div>
                   <h3>Explore</h3>
                   <ul>
+                    <li>Tools</li>
                     <li>Projects</li>
                     <li>Features</li>
-                    <li>About</li>
                   </ul>
                 </div>
 
                 <div>
                   <h3>Blog</h3>
                   <ul>
-                    <li>Dev Notes</li>
-                    <li>Insights</li>
-                    <li>Case Studies</li>
+                    <li>How-to</li>
+                    <li>Libraries</li>
+                    <li>Components</li>
                   </ul>
                 </div>
 
                 <div>
-                  <h3>Connect</h3>
+                  <h3>Information</h3>
                   <ul>
                     <li>Contact</li>
                     <li>GitHub</li>
-                    <li>Upwork</li>
+                    <li>Experience</li>
+                    <li>About</li>
                   </ul>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
         <div className={styleBottom.bottomFooter_bottom}>
-          {/* <ul>
+          <ul>
             <li>
-              <span>© 2026 Arslan Tauseef. </span>{" "}
+              <span>©</span>{" "}
+              <span>2026</span>{" "}
+              <span>arslantauseef.dev.</span>{" "}
               <span>All rights reserved.</span>
             </li>
             <li>
               <span>Designed & created by</span> <span>Arslan Tauseef.</span>
             </li>
-          </ul> */}
+          </ul>
         </div>
       </section>
     </footer>

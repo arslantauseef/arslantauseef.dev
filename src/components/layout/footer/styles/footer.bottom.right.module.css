@@ -7,7 +7,7 @@
 }
 
 .wrapper {
-  width: 100%;
+  width: 90%;
   height: 80%;
   display: flex;
   justify-content: space-evenly;
@@ -16,12 +16,23 @@
 
 .wrapper > div {
   display: flex;
-  width: 80%;
+  width: 100%;
   height: 90%;
-
+  padding: 0 0 0 40px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .wrapper > div > h3,
 .wrapper > div > ul {
-  background-color: aqua;
+  width: 100%;
+  font-family: var(--karla);
 }
+
+.wrapper > div > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: rgb(82, 82, 82);
+}
+

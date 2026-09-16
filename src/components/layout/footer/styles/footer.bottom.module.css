@@ -28,3 +28,33 @@
   padding: 0 20px 0 20px;
   display: flex;
 }
+
+.bottomFooter_bottom {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomFooter_bottom > ul {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  font-family: var(--poppins);
+  font-size: 0.8rem;
+  color: rgb(113, 113, 113);
+}
+
+.bottomFooter_bottom > ul > li:nth-child(1) > span:nth-child(1),
+.bottomFooter_bottom > ul > li:nth-child(1) > span:nth-child(2),
+.bottomFooter_bottom > ul > li:nth-child(1) > span:nth-child(3) {
+  color: rgb(27, 27, 27);
+  font-weight: 400;
+}
+.bottomFooter_bottom > ul > li:nth-child(1) > span:nth-child(2) {
+  font-size: 0.7rem;
+}
+
+.bottomFooter_bottom > ul > li:nth-child(2) > span:nth-child(2) {
+  color: rgb(27, 27, 27);
+}
