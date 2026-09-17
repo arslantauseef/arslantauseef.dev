@@ -3,7 +3,9 @@ import styleHeader from "../styles/header.module.css";
 import styleMiddle from "../styles/header.mid.module.css";
 import styleLeft from "../styles/header.left.module.css";
 import styleRight from "../styles/header.right.module.css";
-import logoPNG from "../../../assets/icons/pngs/Logo.png"
+import Logo from "../../../assets/svgs/logo/Logo";
+import { MdArrowRightAlt } from "react-icons/md";
+
 import {
   NavigationMenuButtons,
   navItems,
@@ -13,7 +15,7 @@ export const Header = () => {
   return (
     <header className={styleHeader.header}>
       <NavLink to="/home" className={styleLeft.logoLink}>
-        <img src={logoPNG} width="50px" height="50px" alt=""/>
+        <Logo className={styleLeft.logo} />
       </NavLink>
       <nav className={styleMiddle.middle}>
         <NavigationMenuButtons
@@ -21,7 +23,7 @@ export const Header = () => {
         />
       </nav>
       <div className={styleRight.right}>
-        <div>Contact</div>
+        <div>Contact <MdArrowRightAlt/></div>
       </div>
     </header>
   );
