@@ -11,18 +11,39 @@ import { FaBehanceSquare } from "react-icons/fa";
 import { FaSquareUpwork } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaInstagramSquare } from "react-icons/fa";
+import { MdArrowOutward } from "react-icons/md";
+
+import Logo from "../../../assets/svgs/logo/Logo";
 
 export const Footer = () => {
   return (
     <footer className={style.footer}>
       <section className={styleTop.topFooter}>
         <div className={styleTopLeft.left}>
-          <ul>
-            {/* <li>Click This Card Key To Connect...</li>
-            <li>And see the animation</li> */}
-          </ul>
+          Let's connect
         </div>
-        <div className={styleTopRight.right}></div>
+        <div className={styleTopRight.right}>
+          <div className={styleTopRight.contact_card}>
+            <div className={styleTopRight.contact_cardGrid}>
+              <Logo className={styleTopRight.block_one} />
+              <div className={styleTopRight.block_two}>
+                <span>Arslan Tauseef</span>
+                <span>Full Stack Web Developer</span>
+              </div>
+              <div className={styleTopRight.block_three}>
+                <div>
+                  <span></span>
+                  <span>OPEN FOR PROJECTS</span>
+                </div>
+              </div>
+              <div className={styleTopRight.block_four}>
+                <div>
+                  GET IN TOUCH<MdArrowOutward/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
       {/*  */}
       {/*  */}
@@ -104,9 +125,7 @@ export const Footer = () => {
         <div className={styleBottom.bottomFooter_bottom}>
           <ul>
             <li>
-              <span>©</span>{" "}
-              <span>2026</span>{" "}
-              <span>arslantauseef.dev.</span>{" "}
+              <span>©</span> <span>2026</span> <span>arslantauseef.dev.</span>{" "}
               <span>All rights reserved.</span>
             </li>
             <li>

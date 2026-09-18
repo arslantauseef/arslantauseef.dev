@@ -4,4 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+    font-family: var(--karla);
+    font-size: 6rem;
 }
