@@ -955,7 +955,6 @@ export const FigureCards = (props: Props) => {
       <div className={styleFigureCards.wrapperHeader}>
         <span></span>
       </div>
-      <hr />
       <figure ref={figureRef} className={styleFigureCards.figure}>
         <svg className={styleFigureCards.connections} aria-hidden="true">
           <defs>
@@ -968,9 +967,9 @@ export const FigureCards = (props: Props) => {
               gradientUnits="userSpaceOnUse"
               spreadMethod="reflect"
             >
-              <stop offset="0%" stopColor="rgba(131, 58, 180, 1)" />
-              <stop offset="50%" stopColor="rgba(253, 29, 29, 1)" />
-              <stop offset="100%" stopColor="rgba(252, 176, 69, 1)" />
+              <stop offset="0%" stopColor="rgb(255, 255, 255)" />
+              <stop offset="50%" stopColor="rgb(207, 234, 237)" />
+              <stop offset="100%" stopColor="rgb(255, 255, 255)" />
 
               <animateTransform
                 attributeName="gradientTransform"
@@ -1065,7 +1064,6 @@ export const FigureCards = (props: Props) => {
 
                 ...(isActiveCard ? item.styles.hover : {}),
 
-                // opacity: isActiveCard ? 1 : 0.2,
               }}
               svgStyle={{
                 ...item.styles.svg,
@@ -1088,7 +1086,6 @@ export const FigureCards = (props: Props) => {
           );
         })}
       </figure>
-      <hr />
       <div className={styleFigureCards.wrapperFooter}>
         <span></span>
       </div>

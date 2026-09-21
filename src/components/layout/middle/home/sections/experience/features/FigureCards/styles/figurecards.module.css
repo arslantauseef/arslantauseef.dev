@@ -9,14 +9,34 @@
   box-shadow:
     0 18px 55px #0f172a24,
     inset 0 0 0 1px #94a3b81a;
-  background: linear-gradient(
+  /* background: linear-gradient(
     135deg,
     #fffffff0 0%,
     #f4f7ffc7 45%,
     #ffffffe6 100%
   );
   background-size: 300% 300%;
-  background-position: 0% 50%;
+  background-position: 0% 50%; */
+
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
 
   animation: gradientMove 8s ease-in-out infinite;
 }
@@ -64,9 +84,6 @@
 }
 
 .connectionPath {
-
-
-
   stroke-dashoffset: -1;
   stroke-dasharray: 1 1;
 
@@ -76,11 +93,11 @@
 
 @keyframes drawPaths {
   0% {
-    stroke-dashoffset:  -1;
+    stroke-dashoffset: -1;
     opacity: 1;
   }
   100% {
-    stroke-dashoffset:  0;
+    stroke-dashoffset: 0;
     opacity: 1;
   }
 }
