@@ -914,7 +914,6 @@ export const FigureCards = (props: Props) => {
     };
   };
 
-  console.log(props.activeStage);
 
   useEffect(() => {
     const measureCardCenters = () => {

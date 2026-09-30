@@ -1,0 +1,27 @@
+.container {
+  width: 20%;
+  height: 100dvh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 20px 10px 20px 20px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  border: none;
+}
+
+.wrapper {
+  background-color: var(--parchment);
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+}

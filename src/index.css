@@ -7,6 +7,17 @@
   --color-primary: #2563eb;
   --color-muted: #6b7280;
 
+
+/* COLOR PALETTES  */
+--red: #fd1d1dff;
+--orange: #fcb045ff;
+--black: #000000ff;
+--parchment: rgb(251, 243, 241);
+--white: #ffffffff;
+/* ENDS */
+
+
+
   /* Header */
   --header-height: 110px;
 
@@ -34,9 +45,6 @@ html {
 body,
 #root {
   min-height: 100vh;
-}
+  width:100%;
 
-#root {
-  margin: 0 auto;
-  width:85%;
 }

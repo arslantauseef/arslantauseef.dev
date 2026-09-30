@@ -1,0 +1,197 @@
+.navbar {
+  width: 100%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+
+
+.navitems {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+  align-items: start;
+}
+
+.navitems > label {
+  font-family: var(--karla);
+  color: rgb(74, 73, 73);
+}
+.navitems > li {
+  position: relative;
+  padding: 5px 5px 5px 10px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: rgb(51, 50, 50);
+}
+
+.navitems > li > a {
+  color: inherit;
+  text-decoration: none;
+  list-style: none;
+  font-family: var(--poppins);
+  z-index: 2;
+}
+.navitems > li > svg {
+  z-index: 4;
+  color: inherit;
+} 
+
+.navitems > li:has(> a.active) {
+  color: white;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0%;
+  animation: cicularPulseEffect 1s linear infinite;
+  width: 100%;
+  height: 100%;
+  background: #833ab4;
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#833AB4", endColorstr="#FCB045", GradientType=1);
+  display: block;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.active .navbar > li > a {
+  color: white;
+}
+
+
+/* .navbar::before {
+  content: "";
+  position: absolute;
+
+  top: -10%;
+  right: -5%;
+
+  width: 65%;
+  height: 70%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at top right,
+    black 0%,
+    black 25%,
+    transparent 72%
+  );
+
+  mask-image: radial-gradient(
+    ellipse at top right,
+    black 0%,
+    black 25%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+  z-index: 0;
+
+  animation: animateNavGradientTopRight 5s ease-in-out infinite;
+} */
+
+/* .navbar::after {
+  content: "";
+  position: absolute;
+
+  bottom: -10%;
+  left: -5%;
+
+  width: 65%;
+  height: 70%;
+
+  background: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    ellipse at bottom left,
+    black 0%,
+    black 25%,
+    transparent 72%
+  );
+
+  mask-image: radial-gradient(
+    ellipse at bottom left,
+    black 0%,
+    black 10%,
+    transparent 55%
+  );
+
+  pointer-events: none;
+  z-index: 0;
+
+  animation: animateNavGradientBottomLeft 5s ease-in-out infinite;
+} */
+
+
+
+/* @keyframes animateNavGradientTopRight {
+  0% {
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+  50% {
+    transform: scale(1);
+    transform-origin: top right;
+  }
+  100% {
+    transform: scale(0.9);
+    transform-origin: top right;
+  }
+}
+
+@keyframes animateNavGradientBottomLeft {
+  0% {
+    transform: scale(0.9);
+    transform-origin: bottom left;
+  }
+  50% {
+    transform: scale(1);
+    transform-origin: bottom left;
+  }
+  100% {
+    transform: scale(0.9);
+    transform-origin: bottom left;
+  }
+} */

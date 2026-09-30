@@ -8,27 +8,28 @@
 
   container-type: size;
 }
+/* _______________________________________________________________  */
 
-.contact_card {
+/* _______________________________________________________________  */
+.frontCard {
   transform-style: preserve-3d;
+  backface-visibility: hidden;
 
   position: absolute;
-
-  width: min(50cqw, 96cqh, 720px);
-  aspect-ratio: 16 / 10;
-
-  background-color: white;
-
   top: 50%;
   left: 50%;
-
+z-index: 2;
   transform: translate(-50%, -50%) rotateY(-20deg) rotateX(20deg);
 
-  box-shadow: 0 0 20px -1px rgb(57, 57, 57);
-  border-radius: 20px;
-
-  animation: floating 2s ease-in-out infinite forwards;
+  transition: transform 1s ease;
 }
+
+.frontCard.absolute {
+  transform: translate(-50%, -50%) rotateY(180deg) rotateX(0deg);
+}
+/* _______________________________________________________________  */
+
+/* _______________________________________________________________  */
 
 .contact_cardGrid {
   padding: 20px;
@@ -128,7 +129,7 @@
   font-size: 0.8rem;
   gap: 5px;
 }
-
+/* 
 @keyframes floating {
   0% {
     transform: translate(-50%, -60%) rotateY(-20deg) rotateX(20deg);
@@ -141,4 +142,27 @@
   100% {
     transform: translate(-50%, -60%) rotateY(-20deg) rotateX(20deg);
   }
+} */
+
+/* _______________________________________________________________  */
+
+/* _______________________________________________________________  */
+
+.backCard {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%) rotateY(-20deg) rotateX(20deg);
+
+  transition: transform 1s ease, top 1s ease, left 1s ease;
+  border-radius: 20px;
+  width: min(50cqw, 96cqh, 720px);
+  aspect-ratio: 16 / 10;
+  z-index: 1;
+  padding: 20px;
+}
+
+.backCard.absolute {
+  transform: translate(-50%, -50%) rotateY(0deg) rotateX(0deg);
 }

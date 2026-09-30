@@ -1,10 +1,10 @@
 import style from "../styles/footer.module.css";
-import styleTop from "../styles/footer.top.module.css";
-import styleBottom from "../styles/footer.bottom.module.css";
-import styleTopLeft from "../styles/footer.top.left.module.css";
-import styleTopRight from "../styles/footer.top.right.module.css";
-import styleBottomLeft from "../styles/footer.bottom.left.module.css";
-import styleBottomRight from "../styles/footer.bottom.right.module.css";
+import styleTop from "../styles/top/footer.top.module.css";
+import styleBottom from "../styles/bottom/footer.bottom.module.css";
+import styleTopLeft from "../styles/top/footer.top.left.module.css";
+import styleTopRight from "../styles/top/footer.top.right.module.css";
+import styleBottomLeft from "../styles/bottom/footer.bottom.left.module.css";
+import styleBottomRight from "../styles/bottom/footer.bottom.right.module.css";
 import LogoPNG from "../../../assets/icons/pngs/Logo.png";
 import { RiTwitterXLine } from "react-icons/ri";
 import { FaBehanceSquare } from "react-icons/fa";
@@ -14,16 +14,26 @@ import { FaInstagramSquare } from "react-icons/fa";
 import { MdArrowOutward } from "react-icons/md";
 
 import Logo from "../../../assets/svgs/logo/Logo";
+import { useState } from "react";
 
 export const Footer = () => {
+  const [isForumActive, setIsForumActive] = useState<boolean>(true);
+
+  const handleClick = () => {
+    setIsForumActive((pre) => !pre);
+  };
+  console.log(isForumActive);
   return (
     <footer className={style.footer}>
       <section className={styleTop.topFooter}>
-        <div className={styleTopLeft.left}>
-          Let's connect
-        </div>
-        <div className={styleTopRight.right}>
-          <div className={styleTopRight.contact_card}>
+        <div className={`${isForumActive? styleTopLeft.left : [styleTopLeft.left, styleTopLeft.absolute].join(' ')}`}>Let's connect</div>
+        <div
+          className={`${isForumActive ? styleTopRight.right : styleTopRight.absolute}`}
+        >
+          {/* STAGES 1 */}
+          <div
+            className={`${isForumActive ? styleTopRight.frontCard : [styleTopRight.frontCard, styleTopRight.absolute].join(' ')}`}
+          >
             <div className={styleTopRight.contact_cardGrid}>
               <Logo className={styleTopRight.block_one} />
               <div className={styleTopRight.block_two}>
@@ -37,11 +47,16 @@ export const Footer = () => {
                 </div>
               </div>
               <div className={styleTopRight.block_four}>
-                <div>
-                  GET IN TOUCH<MdArrowOutward/>
+                <div onClick={() => handleClick()}>
+                  GET IN TOUCH
+                  <MdArrowOutward />
                 </div>
               </div>
             </div>
+          </div>
+          {/* STAGE 2 */}
+          <div className={`${isForumActive? styleTopRight.backCard : [styleTopRight.backCard, styleTopRight.absolute].join(' ') }`}>
+            position
           </div>
         </div>
       </section>

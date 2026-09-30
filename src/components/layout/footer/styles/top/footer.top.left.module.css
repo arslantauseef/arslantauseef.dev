@@ -7,4 +7,12 @@
     color: white;
     font-family: var(--karla);
     font-size: 6rem;
+    transform: translateX(0);
+    transition: transform 1s;
+}
+
+
+
+.left.absolute {
+    transform: translateX(-100%);
 }
