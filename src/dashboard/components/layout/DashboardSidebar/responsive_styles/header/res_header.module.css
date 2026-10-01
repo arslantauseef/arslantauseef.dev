@@ -1,0 +1,5 @@
+@media (max-width: 1091px) {
+    .grid h2 {
+        display: none;
+    }
+}

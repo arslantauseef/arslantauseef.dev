@@ -9,8 +9,6 @@
   flex-direction: column;
 }
 
-
-
 .navitems {
   width: 100%;
   height: 90%;
@@ -25,13 +23,10 @@
   color: rgb(74, 73, 73);
 }
 .navitems > li {
-  position: relative;
-  padding: 5px 5px 5px 10px;
   width: 100%;
   height: auto;
   display: flex;
   align-items: center;
-  gap: 5px;
   color: rgb(51, 50, 50);
 }
 
@@ -41,11 +36,18 @@
   list-style: none;
   font-family: var(--poppins);
   z-index: 2;
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 5px 5px 10px;
+
 }
 .navitems > li > svg {
   z-index: 4;
   color: inherit;
-} 
+}
 
 .navitems > li:has(> a.active) {
   color: white;
@@ -88,7 +90,6 @@
 .active .navbar > li > a {
   color: white;
 }
-
 
 /* .navbar::before {
   content: "";
@@ -163,8 +164,6 @@
 
   animation: animateNavGradientBottomLeft 5s ease-in-out infinite;
 } */
-
-
 
 /* @keyframes animateNavGradientTopRight {
   0% {

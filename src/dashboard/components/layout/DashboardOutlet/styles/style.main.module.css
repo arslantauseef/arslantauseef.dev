@@ -1,7 +1,10 @@
-#root2 {
-    width: 100%;
-    min-height: 100dvh;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row;
+.root2 {
+  width: 100%;
+  min-height: 100dvh;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns:
+    clamp(280px, 18vw, 300px)
+    minmax(0, 1fr);
 }

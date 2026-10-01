@@ -30,7 +30,6 @@
 }
 
 .grid > h2 {
-  grid-area: 1 / 2 / 2 / 3;
   width: fit-content;
   height: 100%;
   font-size: clamp(0.7rem, 1rem, 1.5rem);
