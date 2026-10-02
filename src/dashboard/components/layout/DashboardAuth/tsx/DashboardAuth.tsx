@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import style from "../styles/main/auth.module.css";
 import Logo from "../../../../../components/assets/svgs/logo/Logo";
 import styleRight from "../styles/right/auth.right.module.css";
@@ -21,10 +21,10 @@ import { LuTableOfContents as Content} from "react-icons/lu";
 import { IoSettingsOutline as Settings } from "react-icons/io5";
 
 
-type DefinedFormFields = {
-  email: string;
-  password: string;
-};
+// type DefinedFormFields = {
+//   email: string;
+//   password: string;
+// };
 export const DashboardAuth = () => {
   // const [loginInput, setLoginInput] = useState<DefinedFormFields>();
   return (
