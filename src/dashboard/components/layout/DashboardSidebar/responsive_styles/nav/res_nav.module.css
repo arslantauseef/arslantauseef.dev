@@ -1,5 +1,9 @@
 @media (max-width: 1091px) {
-    .navitems li > a > span {
-        display: none;
-    }
+  .navitems li > a > span {
+    display: none;
+  }
+  .navitems li > a {
+      justify-content: center;
+  padding: 5px 5px 5px 5px;
+  }
 }

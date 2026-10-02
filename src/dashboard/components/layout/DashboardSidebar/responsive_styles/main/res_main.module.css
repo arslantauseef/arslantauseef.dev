@@ -1,7 +1,0 @@
-@media (max-width: 1091px) {
-  .root2 {
-    grid-template-columns:
-      100px
-      minmax(0, 1fr);
-  }
-}

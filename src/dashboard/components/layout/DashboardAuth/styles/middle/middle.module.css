@@ -1,0 +1,127 @@
+.middle {
+  width: 30%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  height: 80dvh;
+}
+
+.middle div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle div > img {
+  width: 110px;
+  height: 110px;
+}
+
+.alpha {
+  grid-area: 1 / 1 / 2 / 2;
+  animation: alpha 2.8s ease-in-out infinite ;
+}
+@keyframes alpha {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translateY(5%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+
+
+.beta {
+  grid-area: 1 / 3 / 2 / 4;
+  animation: beta 4.5s ease-in-out infinite ;
+}
+@keyframes beta {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translateY(-5%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+
+.gamma {
+  grid-area: 2 / 2 / 3 /3;
+  animation: gamma 3.5s ease-in-out infinite ;
+}
+@keyframes gamma {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translateX(5%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+.delta {
+  grid-area: 4 / 2 / 5 /3;
+  animation: delta 4s ease-in-out infinite ;
+}
+@keyframes delta {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translate(-5%, -10%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+.epsilon {
+  grid-area: 3 / 3 / 4 /4;
+  animation: epsilon 3.1s ease-in-out infinite ;
+}
+@keyframes epsilon {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translate(-10%, -10%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+.zelta {
+  grid-area: 3 / 1 / 4 /2;
+  animation: zelta 3s ease-in-out infinite ;
+}
+@keyframes zelta {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  50% {
+    transform: scale(0.95) translate(-10%, 20%);
+  }
+  100% {
+    transform: scale(1) translateY(0);
+  }
+}
+
+
+@media (max-width: 1125px) {
+  .middle {
+    display: none;
+  }
+}

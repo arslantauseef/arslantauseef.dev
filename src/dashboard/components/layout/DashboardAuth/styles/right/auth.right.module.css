@@ -1,0 +1,274 @@
+.right {
+  width: 30%;
+  min-height: 100dvh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form {
+  background-color: black;
+  min-height: 80dvh;
+  max-height: 80dvh;
+  width: 100%;
+  /* for glassy look... */
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 0.5fr 0.5fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+  padding: 5px;
+  align-items: center;
+  justify-items: center;
+  animation: form 2s ease-in-out forwards;
+}
+
+@keyframes form {
+  from {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+/* Alpha */
+.alpha {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.alpha svg {
+  height: 30px;
+  width: 30px;
+}
+
+.alpha span {
+  font-size: 20px;
+  font-family: var(--karla);
+}
+/*  */
+
+/* Beta  */
+.beta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+  font-family: var(--poppins);
+}
+
+.beta strong {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.beta span {
+  font-size: 10px;
+}
+/*  */
+
+/* Gamma  */
+.gamma {
+  display: flex;
+  height: 80%;
+  background-color: white;
+  width: 80%;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px -1px rgb(106, 106, 106);
+}
+
+.gamma svg {
+  width: 10%;
+}
+
+.gamma input {
+  width: 90%;
+  border: none;
+  outline: none;
+}
+
+/*  */
+
+/* delta  */
+.delta {
+  display: flex;
+  height: 80%;
+  background-color: white;
+  width: 80%;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px -1px rgb(106, 106, 106);
+}
+
+.delta svg {
+  width: 10%;
+}
+
+.delta input {
+  width: 90%;
+  border: none;
+  outline: none;
+}
+/*  */
+
+/* Epsilon  */
+.epsilon {
+  display: flex;
+  justify-content: space-between;
+  justify-self: center;
+  width: 80%;
+  font-family: var(--karla);
+}
+.epsilon div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  font-size: small;
+}
+
+.epsilon span {
+  font-size: small;
+  color: #fc7234;
+  font-weight: 500;
+}
+/*  */
+
+/* Zeta */
+.zeta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  background-color: #fc7234;
+  height: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px -1px #fd1d1d;
+  background: #fd1d1d;
+  background: linear-gradient(
+    90deg,
+    rgba(253, 29, 29, 1) 0%,
+    rgba(252, 114, 52, 1) 46%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  color: white;
+  font-family: var(--karla);
+}
+/*     */
+
+/* Eta */
+.eta {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  height: 100%;
+}
+
+.eta hr {
+  width: 30%;
+  height: 0.1px;
+  border: none;
+  background-color: rgb(178, 177, 177);
+}
+
+.eta small {
+  display: block;
+  width: 40%;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px;
+  color: rgb(2, 2, 2);
+  border-radius: 5px;
+  font-family: var(--karla);
+  font-size: 12px;
+}
+/*      */
+
+/* Theta  */
+.theta {
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  height: 50%;
+  align-items: center;
+}
+
+.theta div {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px rgb(227, 226, 226);
+  cursor: pointer;
+}
+
+.theta div:active {
+  background-color: rgb(255, 249, 249);
+  box-shadow: 0px 0px 10px 2px rgb(227, 226, 226);
+}
+
+.theta div > img {
+  width: 30px;
+  object-fit: 16 / 9;
+}
+/*       */
+
+/* Iota  */
+.iota {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--karla);
+  font-size: 13px;
+}
+
+.iota small {
+  font-size: 13px;
+}
+
+.iota strong {
+  color: #fc7234;
+}
+/*       */
+
+
+@media (max-width: 1396px) {
+    .right {
+        width: 40%;
+    }    
+}
+
+@media (max-width: 1065px) {
+  .right {
+    width: 60%;
+  }
+}
+
+
+@media (max-width: 759px) {
+  .right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,134 @@
+.wrapper {
+  display: flex;
+  height: 40%;
+  gap: 10px;
+}
+
+.left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+}
+
+.right {
+  width: 40%;
+  background-color: var(--parchment);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.project_kpi {
+  height: 45%;
+  display: flex;
+  gap: 10px;
+}
+
+.project_insight {
+  height: 55%;
+  display: flex;
+  gap: 10px;
+  background-color: var(--parchment);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.project_insight > div {
+  border-radius: 10px;
+}
+
+.project_kpi > div {
+  width: calc(100% / 4);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px -1px #101010;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--karla);
+  flex-direction: column;
+  padding: 10px;
+}
+
+.project_kpi > div > span {
+  align-self: flex-start;
+  color: white;
+}
+
+.project_kpi > div > strong {
+  align-self: flex-start;
+  color: white;
+  font-size: 40px;
+}
+.project_kpi > div > div {
+  align-self: flex-start;
+}
+
+.project_kpi > div > div > span {
+  color: white;
+  font-size: 10px;
+}
+
+.project_kpi > div:nth-child(1) {
+  background: var(--brand-gradient);
+  background-size: 200% 200%;
+  animation: active 3s ease-in-out infinite;
+}
+.project_kpi > div:nth-child(2) {
+  background: #faf2f0;
+  border: none;
+  color: #38333b;
+}
+.project_kpi > div:nth-child(3) {
+  background: #faf2f0;
+  border: none;
+  color: #38333b;
+}
+.project_kpi > div:nth-child(4) {
+  background: #faf2f0;
+  border: none;
+  color: #38333b;
+}
+
+.project_insight > div {
+  box-shadow: 0px 0px 5px -1px #101010;
+}
+
+.project_kpi > div:nth-child(2) > *,
+.project_kpi > div:nth-child(2) > * > * {
+  color: #38333b;
+}
+.project_kpi > div:nth-child(3) > *,
+.project_kpi > div:nth-child(3) > * > * {
+  color: #38333b;
+}
+.project_kpi > div:nth-child(4) > *,
+.project_kpi > div:nth-child(4) > * > * {
+  color: #38333b;
+}
+@keyframes active {
+  0%,
+  100% {
+    background-position: 100% 0;
+  }
+
+  35% {
+    background-position: 50% 0%;
+  }
+
+  65% {
+    background-position: 60% 100%;
+  }
+}
+
+.project_insight > div:nth-child(1) {
+  width: 50%;
+}
+.project_insight > div:nth-child(2) {
+  width: 20%;
+}
+
+.project_insight > div:nth-child(3) {
+  width: 30%;
+}

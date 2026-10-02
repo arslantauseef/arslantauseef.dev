@@ -17,6 +17,8 @@ import { Dashboard } from "./dashboard/components/layout/Dashboard/tsx/Dashboard
 import { Settings } from "./dashboard/components/pages/Settings/tsx/Settings.tsx";
 import { Content } from "./dashboard/components/pages/Content/tsx/Content.tsx";
 import { DProjects } from "./dashboard/components/pages/Projects/tsx/DProjects.tsx";
+import { DashboardAuth } from "./dashboard/components/layout/DashboardAuth/tsx/DashboardAuth.tsx";
+import { ProtectedDashboard } from "./dashboard/components/layout/ProtectedDashboard/tsx/ProtectedDashboard.tsx";
 
 const router = createBrowserRouter([
   {
@@ -51,25 +53,34 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardOutlet />,
+    element: <ProtectedDashboard />,
     children: [
       {
-        index: true,
-        element: <Dashboard />,
-      },
-      {
-        path: "settings",
-        element: <Settings />,
-      },
-      {
-        path: "content",
-        element: <Content />,
-      },
-      {
-        path: "projects",
-        element: <DProjects />,
+        element: <DashboardOutlet />,
+        children: [
+          {
+            index: true,
+            element: <Dashboard />,
+          },
+          {
+            path: "settings",
+            element: <Settings />,
+          },
+          {
+            path: "content",
+            element: <Content />,
+          },
+          {
+            path: "projects",
+            element: <DProjects />,
+          },
+        ],
       },
     ],
+  },
+  {
+    path: "/dashboard/login",
+    element: <DashboardAuth />,
   },
 ]);
 

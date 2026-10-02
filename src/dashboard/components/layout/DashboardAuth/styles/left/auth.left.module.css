@@ -1,0 +1,133 @@
+.left {
+  width: 40%;
+  height: 80dvh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  animation: left 2s ease-in-out forwards;
+}
+
+@keyframes left {
+  from {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+
+.alpha {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--karla);
+  font-size: 12px;
+}
+
+.beta {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--karla);
+  font-weight: 1000;
+  color: black;
+}
+.beta > span:nth-child(1) {
+  font-size: 50px;
+}
+.beta > span:nth-child(2) {
+  font-size: 50px;
+}
+.beta > span:nth-child(3) {
+  font-size: 50px;
+  background: var(--brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gamma {
+  font-family: var(--poppins);
+  font-size: small;
+  color: rgb(124, 124, 124);
+}
+
+.delta {
+  width: 30%;
+  border: none;
+  height: 2px;
+  background: var(--brand-gradient);
+  animation: delta 5s ease-in-out infinite forwards;
+}
+@keyframes delta {
+  0%,
+  100% {
+    width: 30%;
+  }
+  30% {
+    width: 40%;
+  }
+  60% {
+    width: 20%;
+  }
+  80% {
+    width: 60%;
+  }
+}
+
+.epsilon {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.epsilon li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.epsilon li > svg {
+  height: 100%;
+  width: fit-content;
+  color: #f63210;
+}
+.epsilon div {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--karla);
+}
+
+.zeta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.zeta > span {
+  position: relative;
+  font-family: var(--poppins);
+}
+
+.zeta > span:not(:last-child)::after {
+  content: "•";
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #9a9a9a;
+}
+
+@media (max-width: 1396px) {
+  .left {
+    width: 30%;
+  }
+}
+
+@media (max-width: 1125px) {
+  .left {
+    display: none;
+  }
+}

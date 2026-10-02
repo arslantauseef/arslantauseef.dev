@@ -7,4 +7,13 @@
   grid-template-columns:
     clamp(280px, 18vw, 300px)
     minmax(0, 1fr);
+  position: relative;
+}
+
+@media (max-width: 1091px) {
+  .root2 {
+    grid-template-columns:
+      100px
+      minmax(0, 1fr);
+  }
 }
