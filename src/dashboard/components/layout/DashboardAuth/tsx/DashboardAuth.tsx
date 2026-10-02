@@ -26,7 +26,7 @@ type DefinedFormFields = {
   password: string;
 };
 export const DashboardAuth = () => {
-  const [loginInput, setLoginInput] = useState<DefinedFormFields>();
+  // const [loginInput, setLoginInput] = useState<DefinedFormFields>();
   return (
     <section aria-label="login" className={style.container}>
       <div className={style.wrapper}>
