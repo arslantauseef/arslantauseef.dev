@@ -17,16 +17,21 @@ import styleMiddle from "../styles/middle/middle.module.css";
 import { Orb } from "../../../../../components/global_feature/orb/tsx/Orb";
 
 import { GrProjects as Projects } from "react-icons/gr";
-import { LuTableOfContents as Content} from "react-icons/lu";
+import { LuTableOfContents as Content } from "react-icons/lu";
 import { IoSettingsOutline as Settings } from "react-icons/io5";
 
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
-// type DefinedFormFields = {
-//   email: string;
-//   password: string;
-// };
 export const DashboardAuth = () => {
-  // const [loginInput, setLoginInput] = useState<DefinedFormFields>();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [loginInput, setLoginInput] = useState({
+    email: "",
+    password: "",
+  });
+
   return (
     <section aria-label="login" className={style.container}>
       <div className={style.wrapper}>
@@ -46,21 +51,21 @@ export const DashboardAuth = () => {
           <hr className={styleLeft.delta} />
           <ul className={styleLeft.epsilon}>
             <li>
-                <Projects/>
+              <Projects />
               <div>
                 <strong>Projects</strong>
                 <small>Manage and showcase your work</small>
               </div>
             </li>
             <li>
-                <Content/>
+              <Content />
               <div>
                 <strong>Content</strong>
                 <small>Update page information</small>
               </div>
             </li>
             <li>
-                <Settings/>
+              <Settings />
               <div>
                 <strong>Settings</strong>
                 <small>Configure and customize</small>
@@ -105,11 +110,28 @@ export const DashboardAuth = () => {
             </div>
             <div className={styleRight.gamma}>
               <HiOutlineMail />
-              <input type="text" placeholder="Enter your email" />
+              <input
+                type="text"
+                placeholder="Enter your email"
+                value={loginInput.email}
+                onChange={(e) =>
+                  setLoginInput((prev) => ({ ...prev, email: e.target.value }))
+                }
+              />
             </div>
             <div className={styleRight.delta}>
               <TbLockPassword />
-              <input type="text" placeholder="Enter password" />
+              <input
+                type="text"
+                placeholder="Enter password"
+                value={loginInput.password}
+                onChange={(e) => {
+                  setLoginInput((prev) => ({
+                    ...prev,
+                    password: e.target.value,
+                  }));
+                }}
+              />
             </div>
             <div className={styleRight.epsilon}>
               <div>

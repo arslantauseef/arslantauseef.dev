@@ -5,6 +5,7 @@ import {
   RouterProvider,
   Navigate,
 } from "react-router-dom";
+import { Provider } from "react-redux";
 import { Home } from "./components/layout/middle/home/tsx/Home.tsx";
 import "./index.css";
 import App from "./App.tsx";
@@ -19,6 +20,9 @@ import { Content } from "./dashboard/components/pages/Content/tsx/Content.tsx";
 import { DProjects } from "./dashboard/components/pages/Projects/tsx/DProjects.tsx";
 import { DashboardAuth } from "./dashboard/components/layout/DashboardAuth/tsx/DashboardAuth.tsx";
 import { ProtectedDashboard } from "./dashboard/components/layout/ProtectedDashboard/tsx/ProtectedDashboard.tsx";
+import { store } from "./store/store.ts";
+import { QueryClientProvider } from "@tanstack/react-query";
+import { queryClient } from "./query/queryClient.ts";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +90,10 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
+    </Provider>
   </StrictMode>,
 );
