@@ -1,16 +1,16 @@
-type LoginFields = {
+export type LoginFields = {
   email: string;
   password: string;
 };
 
-type AuthUser = {
+export type AuthUser = {
   id: number;
   name: string;
   email: string;
   role: UserRole;
 };
 
-type SignInResponse = {
+export type SignInResponse = {
   message: string;
   data: AuthUser;
 };

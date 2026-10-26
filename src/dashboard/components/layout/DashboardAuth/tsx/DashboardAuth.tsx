@@ -24,7 +24,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useMutation } from "@tanstack/react-query";
-import { signIn } from "../../../../api/auth/auth";
+import { signIn } from "../../../../api/auth/api.signin";
 import { setUser } from "../../../../redux/auth/authSlice";
 
 export const DashboardAuth = () => {
