@@ -23,6 +23,9 @@ import { IoSettingsOutline as Settings } from "react-icons/io5";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { signIn } from "../../../../api/auth/auth";
+import { setUser } from "../../../../redux/auth/authSlice";
 
 export const DashboardAuth = () => {
   const dispatch = useDispatch();
@@ -31,6 +34,23 @@ export const DashboardAuth = () => {
     email: "",
     password: "",
   });
+  const signInMutation = useMutation({
+    mutationFn: signIn,
+    onSuccess: (data) => {
+      dispatch(setUser(data.data));
+      navigate("/dashboard");
+    },
+  });
+
+  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    signInMutation.mutate(loginInput);
+    setLoginInput({
+      email: "",
+      password: "",
+    });
+  };
 
   return (
     <section aria-label="login" className={style.container}>
@@ -99,7 +119,7 @@ export const DashboardAuth = () => {
           </div>
         </div>
         <div className={styleRight.right}>
-          <form action="" className={styleRight.form}>
+          <form onSubmit={handleSubmit} className={styleRight.form}>
             <div className={styleRight.alpha}>
               <Logo />
               <span>Custom Dashboard</span>
@@ -111,7 +131,7 @@ export const DashboardAuth = () => {
             <div className={styleRight.gamma}>
               <HiOutlineMail />
               <input
-                type="text"
+                type="email"
                 placeholder="Enter your email"
                 value={loginInput.email}
                 onChange={(e) =>
@@ -122,7 +142,7 @@ export const DashboardAuth = () => {
             <div className={styleRight.delta}>
               <TbLockPassword />
               <input
-                type="text"
+                type="password"
                 placeholder="Enter password"
                 value={loginInput.password}
                 onChange={(e) => {
@@ -140,7 +160,9 @@ export const DashboardAuth = () => {
               </div>
               <span>Forgot your password?</span>
             </div>
-            <div className={styleRight.zeta}>Sign in</div>
+            <button type="submit" className={styleRight.zeta}>
+              Sign in
+            </button>
             <div className={styleRight.eta}>
               <hr />
               <small>OR CONTINUE WITH</small>

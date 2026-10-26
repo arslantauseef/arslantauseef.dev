@@ -1,6 +1,12 @@
-import { Navigate, Outlet } from 'react-router-dom'
+import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "../../../../../store/hook";
 
 export const ProtectedDashboard = () => {
-    const isTrue:boolean = false
-  return isTrue ? <Outlet/> : <Navigate to={"/dashboard/login"} replace />
-}
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+
+  return isAuthenticated ? (
+    <Outlet />
+  ) : (
+    <Navigate to={"/dashboard/login"} replace />
+  );
+};
