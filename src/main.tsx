@@ -58,6 +58,9 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <ProtectedDashboard />,
+    handle: {
+      breadcrumb: "Dashboard",
+    },
     children: [
       {
         element: <DashboardOutlet />,
@@ -69,14 +72,23 @@ const router = createBrowserRouter([
           {
             path: "settings",
             element: <Settings />,
+            handle: {
+              breadcrumb: "Settings",
+            },
           },
           {
             path: "content",
             element: <Content />,
+            handle: {
+              breadcrumb: "Content",
+            },
           },
           {
             path: "projects",
             element: <DProjects />,
+            handle: {
+              breadcrumb: "Projects",
+            },
           },
         ],
       },
