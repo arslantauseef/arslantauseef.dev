@@ -1,6 +1,8 @@
 import style from "../styles/main/style.main.module.css";
 import { IoNotifications } from "react-icons/io5";
 import { IoMdSearch } from "react-icons/io";
+import { MdLogout } from "react-icons/md";
+
 import styleTopBar from "../styles/topbar/topbar.module.css";
 import styleKpiOverview from "../styles/kpi_overfiew/kpi_overview.module.css";
 import { kpis } from "../constants/Constants";
@@ -14,7 +16,7 @@ export const Dashboard = () => {
         </div>
         <div className={styleTopBar.right}>
           <IoNotifications />
-          <div>AT</div>
+          <MdLogout/>
         </div>
       </section>
       {/*  */}
