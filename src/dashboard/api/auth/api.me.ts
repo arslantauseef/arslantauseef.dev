@@ -1,9 +1,21 @@
+import { refreshToken } from "./api.refreshtoken";
 
 export const getMe = async () => {
-  const response = await fetch(`${import.meta.env.VITE_API_URL}/auth/me`, {
+  let response = await fetch(`${import.meta.env.VITE_API_URL}/auth/me`, {
     method: "GET",
     credentials: "include",
   });
+
+  if (response.status === 401) {
+    await refreshToken();
+
+    response = await fetch(`${import.meta.env.VITE_API_URL}/auth/me`,
+      {
+        method: "GET",
+        credentials:"include"
+      }
+    )
+  }
 
   const data = await response.json();
 
@@ -11,5 +23,5 @@ export const getMe = async () => {
     throw new Error(data.message);
   }
 
-  return data
+  return data;
 };

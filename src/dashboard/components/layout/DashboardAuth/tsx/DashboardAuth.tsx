@@ -161,7 +161,7 @@ export const DashboardAuth = () => {
               <span>Forgot your password?</span>
             </div>
             <button type="submit" className={styleRight.zeta}>
-              Sign in
+              {signInMutation.isPending ? "Loading Sign In...": "Sign In"}
             </button>
             <div className={styleRight.eta}>
               <hr />

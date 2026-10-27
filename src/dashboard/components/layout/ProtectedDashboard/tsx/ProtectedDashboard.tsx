@@ -12,6 +12,7 @@ export const ProtectedDashboard = () => {
     queryFn: getMe,
     retry: false,
   });
+  
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
@@ -24,9 +25,13 @@ export const ProtectedDashboard = () => {
     }
   }, [meQuery.isSuccess, meQuery.isError, meQuery.data, dispatch]);
 
-  return isAuthenticated ? (
-    <Outlet />
-  ) : (
-    <Navigate to={"/dashboard/login"} replace />
-  );
+  if (!isAuthenticated && meQuery.isPending) {
+    return null;
+  }
+
+  if (isAuthenticated || meQuery.isSuccess) {
+    return <Outlet />;
+  }
+
+  return <Navigate to="/dashboard/login" replace />;
 };
