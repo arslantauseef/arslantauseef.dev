@@ -70,6 +70,9 @@ const router = createBrowserRouter([
           {
             index: true,
             element: <Dashboard />,
+            handle: {
+              breadcrumb: "Analytics"
+            }
           },
           {
             path: "settings",

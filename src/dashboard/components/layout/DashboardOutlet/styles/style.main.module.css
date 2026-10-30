@@ -1,5 +1,6 @@
 .root2 {
   display: grid;
+  font-family: var(--karla);
   width: 100%;
   min-height: 100dvh;
   grid-template-columns: clamp(228px, 20vw, 270px) minmax(0, 1fr);

@@ -1,4 +1,4 @@
-import { MdDashboard } from "react-icons/md";
+import { IoMdAnalytics } from "react-icons/io";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineArticle } from "react-icons/md";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -12,8 +12,8 @@ export type NavTypes = {
 
 export const navs = [
   {
-    name: "Dashboard",
-    icon: MdDashboard,
+    name: "Analytics",
+    icon: IoMdAnalytics,
     to: "/dashboard"
   },
   {

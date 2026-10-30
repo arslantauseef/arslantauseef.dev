@@ -18,7 +18,7 @@
   align-items: center;
   gap: 0;
   color: #948b85;
-  font: 12px var(--karla);
+  font: 0.7rem var(--poppins);
 }
 
 .breadcrumbs li {
