@@ -196,7 +196,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: var(--stack-z);
   width: calc(100% - 28px);
   min-width: 0;
   min-height: 96px;
@@ -211,24 +211,17 @@
   box-shadow: 0 9px 19px rgb(117 57 88 / 12%);
   cursor: pointer;
   text-align: left;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease,
-    outline-color 180ms ease;
+  transform: translate3d(calc(var(--stack-index) * 13px), var(--stack-y), 0);
+  transition: transform 260ms cubic-bezier(.2, .72, .24, 1), opacity 180ms ease, box-shadow 180ms ease, outline-color 180ms ease;
 }
 
-.creditCard:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 22px rgb(117 57 88 / 19%);
-}
+.creditCard:hover:not(.cardLeaving):not(.cardReturning) { transform: translate3d(calc(var(--stack-index) * 13px), calc(var(--stack-y) - 2px), 0); box-shadow: 0 12px 22px rgb(117 57 88 / 19%); }
+.cardLeaving { z-index: 0 !important; transform: translate3d(calc(var(--stack-index) * 13px), var(--stack-y), 0) translateX(118%) rotate(4deg); opacity: 0; pointer-events: none; }
+.cardReturning { z-index: var(--stack-z); animation: cardReturn 260ms cubic-bezier(.2, .72, .24, 1) both; }
 
-.creditCard.cardExit {
-  transform: translateX(130%);
-  pointer-events: none;
-}
-
-.creditCard.cardEnter {
-  transform: translateX(0);
+@keyframes cardReturn {
+  from { transform: translate3d(calc(var(--stack-index) * 13px), var(--stack-y), 0) translateX(118%) rotate(4deg); opacity: 0; }
+  to { transform: translate3d(calc(var(--stack-index) * 13px), var(--stack-y), 0); opacity: 1; }
 }
 
 .creditCard:focus-visible {
@@ -236,18 +229,8 @@
   outline-offset: 3px;
 }
 .selectedCard {
-  z-index: 4;
   outline: 2px solid #a8438a;
   outline-offset: 2px;
-}
-
-.creditCard:nth-child(2) {
-  top: 8px;
-  left: 13px;
-}
-.creditCard:nth-child(3) {
-  top: 16px;
-  left: 26px;
 }
 
 .creditCard1 {
@@ -521,11 +504,12 @@
     width: calc(100% - 46px);
     min-height: 108px;
   }
-  .creditCard:nth-child(2) {
-    left: 22px;
-  }
-  .creditCard:nth-child(3) {
-    left: 44px;
+  .creditCard { --stack-y: calc(var(--stack-index) * 8px); transform: translate3d(calc(var(--stack-index) * 22px), var(--stack-y), 0); }
+  .creditCard:hover:not(.cardLeaving):not(.cardReturning) { transform: translate3d(calc(var(--stack-index) * 22px), calc(var(--stack-y) - 2px), 0); }
+  .cardLeaving { transform: translate3d(calc(var(--stack-index) * 22px), var(--stack-y), 0) translateX(118%) rotate(4deg); }
+  @keyframes cardReturn {
+    from { transform: translate3d(calc(var(--stack-index) * 22px), var(--stack-y), 0) translateX(118%) rotate(4deg); opacity: 0; }
+    to { transform: translate3d(calc(var(--stack-index) * 22px), var(--stack-y), 0); opacity: 1; }
   }
   .lendingGrid {
     grid-template-columns: minmax(0, 1fr);

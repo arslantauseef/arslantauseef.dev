@@ -1,7 +1,7 @@
 import style from "../styles/main/style.main.module.css";
 import styleKpiOverview from "../styles/kpi_overfiew/kpi_overview.module.css";
 import { kpis } from "../constants/Constants";
-import { useState } from "react";
+import { useState, type CSSProperties, type TransitionEvent, type AnimationEvent } from "react";
 type CardType = {
   position: string;
   cardName: string;
@@ -26,46 +26,45 @@ const accountCards = [
 ];
 
 export const Dashboard = () => {
-  const [selectedCard, setSelectedCard] = useState<CardType>(accountCards[0]);
+  const [selectedCard, setSelectedCard] = useState<CardType>(accountCards[accountCards.length - 1]);
   const [cards, setCards] = useState<CardType[]>(accountCards);
-  const [animationPhase, setAnimationPhase] = useState<
-    "idle" | "exit" | "enter"
-  >("idle");
-  const [pendingCard, setPendingCard] = useState<CardType | null>(null);
-  const [exitFromIndex, setExitFromIndex] = useState<number | null>(null);
+  const [shufflePhase, setShufflePhase] = useState<"idle" | "leaving" | "returning">("idle");
+  const [movingCard, setMovingCard] = useState<CardType | null>(null);
 
-  const handleCardClicked = (clickedCard: CardType) => {
-    if (animationPhase !== "idle") return;
-    if (clickedCard === selectedCard) return;
-    const clickedIndex = cards.findIndex(
-      (item) => item.cardName === clickedCard.cardName,
-    );
-    setExitFromIndex(clickedIndex);
-    setPendingCard(clickedCard);
-    setAnimationPhase("exit");
+  const finishCardExit = (event: TransitionEvent<HTMLButtonElement>, card: CardType) => {
+    if (event.target !== event.currentTarget || event.propertyName !== "transform" || shufflePhase !== "leaving" || movingCard !== card) return;
+
+    setCards((currentCards) => [
+      ...currentCards.filter((item) => item.position !== card.position),
+      card,
+    ]);
+    setShufflePhase("returning");
   };
-  const handleExitEnd = (card: CardType) => {
-    if (animationPhase !== "exit") return;
-    if (card !== pendingCard) return;
-    if (exitFromIndex === null) return;
 
-    const reorderedCards = [
-      ...cards.slice(exitFromIndex),
-      ...cards.slice(0, exitFromIndex),
-    ];
+  const finishCardReturn = (event: AnimationEvent<HTMLButtonElement>, card: CardType) => {
+    if (event.target !== event.currentTarget || shufflePhase !== "returning" || movingCard !== card) return;
 
-    setCards(reorderedCards);
+    setShufflePhase("idle");
+    setMovingCard(null);
+  };
+
+  const selectCard = (card: CardType) => {
+    if (shufflePhase !== "idle") return;
+
+    const index = cards.findIndex((item) => item.position === card.position);
     setSelectedCard(card);
-    setAnimationPhase("enter");
-  };
+    if (index === cards.length - 1) return;
 
-  const handleEnterEnd = (card: CardType) => {
-    if (animationPhase !== "enter") return;
-    if (card !== pendingCard) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setCards((currentCards) => [
+        ...currentCards.filter((item) => item.position !== card.position),
+        card,
+      ]);
+      return;
+    }
 
-    setAnimationPhase("idle");
-    setPendingCard(null);
-    setExitFromIndex(null);
+    setMovingCard(card);
+    setShufflePhase("leaving");
   };
 
   return (
@@ -176,46 +175,31 @@ export const Dashboard = () => {
                 className={styleKpiOverview.creditCards}
                 aria-label="Select a card"
               >
-                {cards.map((card, index) => {
-                  const shouldExit =
-                    animationPhase === "exit" &&
-                    exitFromIndex !== null &&
-                    (index === exitFromIndex || index === cards.length - 1);
-                  return (
-                    <button
-                      aria-pressed={selectedCard === card}
-                      className={`
-                    ${styleKpiOverview.creditCard}
-                    ${styleKpiOverview[card.class]}
-                    ${shouldExit ? styleKpiOverview.cardExit : ""}
-                    ${animationPhase === "enter" ? styleKpiOverview.cardEnter : ""}
-                    `}
-                      key={card.position}
-                      onClick={() => handleCardClicked(card)}
-                      onTransitionEnd={(event) => {
-                        if (event.propertyName !== "transform") return;
-
-                        handleExitEnd(card);
-                        handleEnterEnd(card);
-                      }}
-                      type="button"
-                    >
-                      <span className={styleKpiOverview.cardTopline}>
-                        <span>Card {card.position}</span>
-                        <span
-                          className={styleKpiOverview.cardSignal}
-                          aria-hidden="true"
-                        />
-                      </span>
-                      <span className={styleKpiOverview.cardDigits}>
-                        ACCOUNT
-                      </span>
-                      <span className={styleKpiOverview.cardCaption}>
-                        {selectedCard === card ? "Selected" : "View balance"}
-                      </span>
-                    </button>
-                  );
-                })}
+                {cards.map((card, index) => (
+                  <button
+                    aria-pressed={selectedCard.position === card.position}
+                    className={`${styleKpiOverview.creditCard} ${styleKpiOverview[card.class]} ${selectedCard.position === card.position ? styleKpiOverview.selectedCard : ""} ${shufflePhase === "leaving" && movingCard?.position === card.position ? styleKpiOverview.cardLeaving : ""} ${shufflePhase === "returning" && movingCard?.position === card.position ? styleKpiOverview.cardReturning : ""}`}
+                    key={card.position}
+                    onClick={() => selectCard(card)}
+                    onTransitionEnd={(event) => finishCardExit(event, card)}
+                    onAnimationEnd={(event) => finishCardReturn(event, card)}
+                    style={{
+                      "--stack-index": index,
+                      "--stack-y": `${index * 8}px`,
+                      "--stack-z": index + 1,
+                    } as CSSProperties}
+                    type="button"
+                  >
+                    <span className={styleKpiOverview.cardTopline}>
+                      <span>{card.cardName}</span>
+                      <span className={styleKpiOverview.cardSignal} aria-hidden="true" />
+                    </span>
+                    <span className={styleKpiOverview.cardDigits}>ACCOUNT</span>
+                    <span className={styleKpiOverview.cardCaption}>
+                      {selectedCard.position === card.position ? "Selected" : "View balance"}
+                    </span>
+                  </button>
+                ))}
               </div>
               <section
                 className={styleKpiOverview.balancePanel}
