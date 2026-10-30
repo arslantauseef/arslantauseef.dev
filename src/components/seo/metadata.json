@@ -1,0 +1,39 @@
+{
+  "origin": "https://arslantauseef.dev",
+  "name": "Arslan Tauseef",
+  "siteName": "Arslan Tauseef",
+  "image": "/profile.jpg",
+  "sameAs": ["https://github.com/arslantauseef"],
+  "pages": {
+    "/home": {
+      "title": "Arslan Tauseef — Full Stack Developer",
+      "description": "Arslan Tauseef is a full stack developer based in Pakistan, building web applications with React, TypeScript, Node.js, and PostgreSQL. Explore his work and approach.",
+      "index": true
+    },
+    "/about": {
+      "title": "About Arslan Tauseef — Stack & Approach",
+      "description": "Meet Arslan Tauseef, a full stack developer in Pakistan. Explore his React, Node.js, PostgreSQL, Drizzle ORM, and Redis stack, working process, and development approach.",
+      "index": true
+    },
+    "/projects": {
+      "title": "Projects by Arslan Tauseef",
+      "description": "Projects by Arslan Tauseef. This page is being prepared.",
+      "index": false
+    },
+    "/features": {
+      "title": "Features — Arslan Tauseef",
+      "description": "Features by Arslan Tauseef. This page is being prepared.",
+      "index": false
+    },
+    "/contact": {
+      "title": "Contact Arslan Tauseef",
+      "description": "Contact Arslan Tauseef about a web development project using the contact panel in the website footer.",
+      "index": false
+    },
+    "/dashboard": {
+      "title": "Dashboard — Arslan Tauseef",
+      "description": "Private administration dashboard.",
+      "index": false
+    }
+  }
+}

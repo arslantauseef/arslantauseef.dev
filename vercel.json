@@ -1,8 +1,8 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [{ "source": "/", "destination": "/home", "permanent": true }],
+  "rewrites": [{ "source": "/dashboard/:path*", "destination": "/dashboard" }],
+  "headers": [{ "source": "/dashboard/:path*", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }]
 }

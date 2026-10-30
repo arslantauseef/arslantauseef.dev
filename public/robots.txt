@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arslantauseef.dev/sitemap.xml
