@@ -1,48 +1,45 @@
-.right {
-  width: 70%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.right { display: grid; grid-template-columns: .65fr 1.35fr; gap: clamp(24px, 5vw, 80px); width: 50%; }
+.right h3 { font-size: 8px; font-weight: 600; letter-spacing: .14em; color: #ab9b8d; margin-bottom: 19px; }
+.right a { display: block; width: fit-content; margin-top: 9px; font-size: 12px; color: #79695c; transition: color 180ms, transform 180ms; }
+.right a:hover { color: #bd593c; transform: translateX(3px); }
+.right p { font-size: 19px; line-height: 1.2; letter-spacing: -.04em; }
+.right button { display: flex; align-items: center; gap: 16px; padding: 0 0 7px; border: none; border-bottom: 1px solid #c5a290; margin: 17px 0 18px; background: transparent; color: #9d583c; font: 500 11px var(--karla); cursor: pointer; }
+.right button svg { font-size: 16px; transition: transform 180ms; }
+.right button:hover svg { transform: translate(2px, -2px); }
+.availability { display: flex; align-items: center; gap: 6px; font-size: 9px; color: #9a8c7e; }
+.availability i { width: 5px; height: 5px; border-radius: 50%; background: #7a9d68; }
+@media (max-width: 700px) {
+  .right { width: 100%; grid-template-columns: 1fr 1.4fr; gap: 20px; }
+  .right h3 { margin-bottom: 14px; font-size: 7px; }
+  .right p { font-size: 18px; }
 }
 
-.wrapper {
-  width: 90%;
-  height: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.right { width: 53%; grid-template-columns: 1fr 1.25fr; gap: clamp(24px, 4vw, 64px); }
+.right h3 { margin-bottom: 14px; }
+.right a { display: flex; align-items: center; gap: 12px; width: 100%; padding: 6px 0; margin: 0; border-bottom: 1px solid #eee6dd; }
+.linkNumber { font-size: 8px; color: #b6a18e; font-variant-numeric: tabular-nums; }
+.right a > svg { margin-left: auto; opacity: 0; transform: translate(-4px, 4px); transition: opacity 180ms, transform 180ms; }
+.right a:hover > svg, .right a:focus-visible > svg { opacity: 1; transform: translate(0); }
+.right button { margin: 14px 0; }
+.availability { display: inline-flex; padding: 6px 9px; background: #edf1e7; border: 1px solid #e2e9d9; border-radius: 20px; color: #778064; }
+.availability i { position: relative; }
+.availability i::after { content: ''; position: absolute; inset: -3px; border: 1px solid #7a9d68; border-radius: 50%; animation: availabilityPulse 2.8s ease-out infinite; }
+.location { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+.location > span:last-child { font-size: 8px; color: #b09985; }
+.location strong { display: block; font-size: 10px; font-weight: 400; color: #796858; margin-top: 3px; }
+.globe { position: relative; display: block; width: 32px; height: 32px; border: 1px solid #bda28b; border-radius: 50%; overflow: hidden; transform: rotate(-15deg); }
+.globe::before, .globe::after { content: ''; position: absolute; left: 0; width: 100%; height: 1px; background: #d4bfac; }
+.globe::before { top: 33%; } .globe::after { bottom: 33%; }
+.globe i { position: absolute; inset: -1px 6px; border: 1px solid #bda28b; border-radius: 50%; animation: globeOrbit 8s linear infinite; }
+.globe i:nth-child(2) { animation-delay: -2.66s; } .globe i:nth-child(3) { animation-delay: -5.33s; }
+@keyframes globeOrbit { from { transform: rotateY(0); } to { transform: rotateY(180deg); } }
+@keyframes availabilityPulse { 0% { transform: scale(.6); opacity: .7; } 75%, 100% { transform: scale(1.6); opacity: 0; } }
+@media (max-width: 700px) {
+  .right { width: 100%; grid-template-columns: 1fr 1.4fr; gap: 24px; }
+  .right a > svg { opacity: .6; transform: none; }
+  .location { margin-top: 12px; }
 }
-
-.wrapper > div {
-  display: flex;
-  width: 100%;
-  height: 90%;
-  padding: 0 0 0 40px;
-  flex-direction: column;
-  gap: 10px;
+@media (prefers-reduced-motion: reduce) {
+  .globe i, .availability i::after { animation: none; }
+  .right a, .right a > svg { transition: none; }
 }
-
-.wrapper > div > h3,
-.wrapper > div > ul {
-  width: 100%;
-  font-family: var(--karla);
-}
-
-.wrapper > div > ul {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  color: rgb(82, 82, 82);
-}
-
-.wrapper > div > ul > li {
-  transform: translate(0);
-  transition: transform 500ms;
-}
-
-.wrapper > div > ul > li:hover {
-  transform: translateX(5px);
-  color: black;
-}
-

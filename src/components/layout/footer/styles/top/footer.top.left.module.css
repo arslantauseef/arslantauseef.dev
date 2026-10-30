@@ -1,18 +1,24 @@
 .left {
-    width: 60%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: var(--karla);
-    font-size: 6rem;
-    transform: translateX(0);
-    transition: transform 1s;
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 58%;
+  padding: 48px clamp(28px, 7vw, 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  font-family: var(--karla);
+  transition: opacity 240ms ease 260ms, transform 360ms ease 200ms;
 }
-
-
-
-.left.absolute {
-    transform: translateX(-100%);
+.kicker { font-size: 10px; font-weight: 600; letter-spacing: .18em; margin-bottom: 22px; }
+.left h2 { font-size: clamp(56px, 7.5vw, 108px); line-height: .88; font-weight: 500; letter-spacing: -.065em; }
+.left h2 span { color: #ffd5b5; }
+.left p { font-size: 14px; opacity: .8; margin-top: 24px; }
+.left.hidden { opacity: 0; transform: translateX(-28px); transition-delay: 0ms; pointer-events: none; }
+@media (max-width: 700px) {
+  .left { width: 100%; height: 48%; padding: 32px; }
+  .left h2 { font-size: 58px; }
+  .left h2 br { display: none; }
+  .left p { margin-top: 16px; }
+  .kicker { font-size: 8px; margin-bottom: 18px; }
 }
