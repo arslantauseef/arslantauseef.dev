@@ -7,21 +7,34 @@ type RouteHandle = {
   breadcrumb?: string;
 };
 export const DashboardHeader = () => {
-  const nestLocation = useMatches()
+  const breadcrumbs = useMatches()
     .flatMap((item) => {
       const handle = item.handle as RouteHandle | undefined;
       return handle?.breadcrumb;
     })
-    .filter(Boolean);
+    .filter((breadcrumb): breadcrumb is string => Boolean(breadcrumb));
+
   return (
-    <section className={styleTopBar.topbar}>
-      {nestLocation.map((breadcrumb, index) => {
-        return <div className={styleTopBar.left}><span key={index}>{index > 0 && " > "}{breadcrumb}</span></div>;
-      })}
+    <header className={styleTopBar.topbar}>
+      <nav className={styleTopBar.left} aria-label="Breadcrumb">
+        <ol className={styleTopBar.breadcrumbs}>
+          {breadcrumbs.map((breadcrumb, index) => (
+            <li key={`${breadcrumb}-${index}`}>
+              <span aria-current={index === breadcrumbs.length - 1 ? "page" : undefined}>
+                {breadcrumb}
+              </span>
+            </li>
+          ))}
+        </ol>
+      </nav>
       <div className={styleTopBar.right}>
-        <IoNotifications />
-        <MdLogout />
+        <span className={styleTopBar.icon} aria-label="Notifications" role="img">
+          <IoNotifications aria-hidden="true" />
+        </span>
+        <span className={styleTopBar.icon} aria-label="Sign out" role="img">
+          <MdLogout aria-hidden="true" />
+        </span>
       </div>
-    </section>
+    </header>
   );
 };

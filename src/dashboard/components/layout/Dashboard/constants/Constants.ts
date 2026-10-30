@@ -2,21 +2,21 @@ export const kpis = [
   {
     name: "Total Projects",
     indicator: 15,
-    text: "10^ increased this month",
+    text: "Across your portfolio",
   },
   {
     name: "In Pipeline",
-    indicator: 0o3,
-    text: "10^ increased this month",
+    indicator: 3,
+    text: "Current project pipeline",
   },
   {
     name: "Active",
-    indicator: 0o1,
-    text: "10^ increased this month",
+    indicator: 1,
+    text: "Marked as active",
   },
   {
     name: "Remaining",
-    indicator: 0o2,
-    text: "10^ increased this month",
+    indicator: 2,
+    text: "Marked as remaining",
   },
 ];

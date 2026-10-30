@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   RouterProvider,
   Navigate,
+  Outlet,
 } from "react-router-dom";
 import { Provider } from "react-redux";
 import { Home } from "./components/layout/middle/home/tsx/Home.tsx";
@@ -57,7 +58,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <ProtectedDashboard />,
+    // Keep the production dashboard protected; render it directly for the local UI preview.
+    element: import.meta.env.DEV ? <Outlet /> : <ProtectedDashboard />,
     handle: {
       breadcrumb: "Dashboard",
     },

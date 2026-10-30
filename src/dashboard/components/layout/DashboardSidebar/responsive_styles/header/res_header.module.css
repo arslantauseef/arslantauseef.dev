@@ -1,5 +1,15 @@
-@media (max-width: 1091px) {
-    .grid h2 {
-        display: none;
-    }
+@media (max-width: 900px) {
+  .grid h2 {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .header {
+    width: auto;
+  }
+
+  .grid h2 {
+    display: block;
+  }
 }

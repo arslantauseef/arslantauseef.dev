@@ -18,18 +18,16 @@ export const DashboardSidebar = () => {
             <h2>arslantauseef.dev</h2>
           </div>
         </div>
-        <hr
-          style={{
-            width: "100%",
-            border: "1px solid #eaeaea",
-          }}
-        />
-        <nav className={`${styleNav.navbar} ${resStyle.navbar}`}>
+        <hr className={styleHeader.divider} />
+        <nav
+          className={`${styleNav.navbar} ${resStyle.navbar}`}
+          aria-label="Dashboard navigation"
+        >
           <ul className={`${styleNav.navitems} ${resStyle.navitems}`}>
-            {navs.map((item, index) => {
+            {navs.map((item) => {
               const Icons = item.icon;
               return (
-                <li key={index}>
+                <li key={item.name}>
                   <NavLink
                     className={({ isActive }) =>
                       isActive ? styleNav.active : ""
@@ -39,7 +37,7 @@ export const DashboardSidebar = () => {
                     aria-label={item.name}
                     title={item.name}
                   >
-                    <Icons />
+                    <Icons aria-hidden="true" />
                     <span>{item.name}</span>
                   </NavLink>
                 </li>

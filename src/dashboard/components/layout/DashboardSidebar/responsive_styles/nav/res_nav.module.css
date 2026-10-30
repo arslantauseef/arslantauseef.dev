@@ -1,9 +1,24 @@
-@media (max-width: 1091px) {
+@media (max-width: 900px) {
   .navitems li > a > span {
     display: none;
   }
+
   .navitems li > a {
-      justify-content: center;
-  padding: 5px 5px 5px 5px;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    width: auto;
+    height: auto;
+  }
+
+  .navitems {
+    width: auto;
+    height: auto;
+    flex-direction: row;
+    gap: 3px;
   }
 }
